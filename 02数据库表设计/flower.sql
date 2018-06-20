@@ -51,6 +51,7 @@ CREATE TABLE `flower` (
   `price` double(9,2) DEFAULT NULL COMMENT '价格',
   `type` varchar(16) DEFAULT NULL COMMENT '种类',
   `commentid` int(10) DEFAULT NULL COMMENT '评论编号',
+  `picture` varchar(255) DEFAULT NULL COMMENT '图片',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
