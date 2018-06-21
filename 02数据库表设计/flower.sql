@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v8.32 
-MySQL - 5.5.27 : Database - flower
+MySQL - 5.5.56 : Database - flower
 *********************************************************************
 */
 
@@ -72,12 +72,13 @@ CREATE TABLE `order` (
   `time` date DEFAULT NULL COMMENT '订单时间',
   `listid` int(10) DEFAULT NULL COMMENT '订单清单号',
   `price` double(12,2) DEFAULT NULL COMMENT '订单总价',
+  `username` varchar(255) DEFAULT NULL COMMENT '订单所属人',
   PRIMARY KEY (`OrderId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `order` */
 
-insert  into `order`(`OrderId`,`time`,`listid`,`price`) values (1,'2018-06-21',1,100.00),(2,'2018-05-21',2,200.00),(3,'2018-04-21',3,300.00);
+insert  into `order`(`OrderId`,`time`,`listid`,`price`,`username`) values (1,'2018-06-21',1,100.00,'wqm01'),(2,'2018-05-21',2,200.00,'cz02'),(3,'2018-04-21',3,300.00,'yc03');
 
 /*Table structure for table `orderlist` */
 
