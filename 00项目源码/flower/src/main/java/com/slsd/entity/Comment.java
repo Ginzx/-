@@ -12,43 +12,53 @@
 package com.slsd.entity;
 
 /**
-* @ClassName: Comment
-* @Description:TODO(评论实体类)
-* @author: hasee
-* @date: 2018年6月21日 下午1:55:37
-*
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
+ * @ClassName: Comment
+ * @Description:TODO(评论实体类)
+ * @author: hasee
+ * @date: 2018年6月21日 下午1:55:37
+ *
+ * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+ */
 
 public class Comment {
-	private int cid;//编号
-	private int commentID;//评论编号
-	private String comment;//评论内容
-	private String user;//用户名
+
+	private int cid;// 编号
+	private int commentID;// 评论编号
+	private String comment;// 评论内容
+	private String user;// 用户名
+
 	public int getCid() {
 		return cid;
 	}
+
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
+
 	public int getCommentID() {
 		return commentID;
 	}
+
 	public void setCommentID(int commentID) {
 		this.commentID = commentID;
 	}
+
 	public String getComment() {
 		return comment;
 	}
+
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
 	public String getUser() {
 		return user;
 	}
+
 	public void setUser(String user) {
 		this.user = user;
 	}
+
 	public Comment(int cid, int commentID, String comment, String user) {
 		super();
 		this.cid = cid;
@@ -56,12 +66,14 @@ public class Comment {
 		this.comment = comment;
 		this.user = user;
 	}
+
 	public Comment() {
 		super();
 	}
+
 	@Override
 	public String toString() {
 		return "Comment [cid=" + cid + ", commentID=" + commentID + ", comment=" + comment + ", user=" + user + "]";
 	}
-	
+
 }
