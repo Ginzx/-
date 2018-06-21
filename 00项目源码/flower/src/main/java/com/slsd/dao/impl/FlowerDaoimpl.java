@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import com.slsd.dao.FlowerDao;
 import com.slsd.entity.Flower;
-import com.slsd.entity.Teacher;
 
 /**
  * @ClassName: FlowerDaoimpl
