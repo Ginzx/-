@@ -12,10 +12,19 @@ import java.util.Date;
  */
 public class Order {
 
+	private String username;// 用户名
 	private int orderID;// 订单号
 	private Date time;// 订单时间
 	private int listID;// 订单清单号
 	private double price;// 订单总价
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public int getOrderID() {
 		return orderID;
@@ -49,8 +58,15 @@ public class Order {
 		this.price = price;
 	}
 
-	public Order(int orderID, Date time, int listID, double price) {
+	@Override
+	public String toString() {
+		return "Order [username=" + username + ", orderID=" + orderID + ", time=" + time + ", listID=" + listID
+				+ ", price=" + price + "]";
+	}
+
+	public Order(String username, int orderID, Date time, int listID, double price) {
 		super();
+		this.username = username;
 		this.orderID = orderID;
 		this.time = time;
 		this.listID = listID;
@@ -59,11 +75,6 @@ public class Order {
 
 	public Order() {
 		super();
-	}
-
-	@Override
-	public String toString() {
-		return "Order [orderID=" + orderID + ", time=" + time + ", listID=" + listID + ", price=" + price + "]";
 	}
 
 }
