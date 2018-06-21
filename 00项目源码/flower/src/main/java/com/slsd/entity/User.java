@@ -9,6 +9,7 @@ package com.slsd.entity;
  * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
  */
 public class User {
+	
 	private String uname;// 用户名
 	private String upwd;// 密码
 	private String address;// 地址
