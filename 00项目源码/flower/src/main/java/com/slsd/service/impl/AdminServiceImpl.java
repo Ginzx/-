@@ -1,4 +1,4 @@
-package com.sksd.service.impl;
+package com.slsd.service.impl;
 
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
