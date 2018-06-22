@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slsd.dao.UserDao">
+<select id="login" parameterType="com.slsd.entity.User" resultType="boolean">
+		select count(*) from user where uname=#{uname},upwd=#{upwd}
+	</select>
+	<insert id="addUser" useGeneratedKeys="true" 
+		parameterType="com.slsd.entity.User">
+		insert into User (uname,upwd,address,phone,sex,name,photo,instroduction)
+		values(#{uname},#{upwd},#{address},##{phone},#{sex},#{name},#{photo},{instroduction})
+	</insert>
+	<update id="editUser" parameterType="com.slsd.entity.User">
+		update User set
+		upwd=#{upwd}, where uname=#{uname}
+	</update>
+	<update id="editUserPhoto" parameterType="com.slsd.entity.User">
+		update User set
+		photo=#{photo}, where uname=#{uname}
+	</update>
+	<update id="delUser" resultType="boolean" parameterType="com.slsd.entity.User">
+		delete from User where
+		uname=#{uname}
+	</update>
+	<select id="getAll" resultType="com.slsd.entity.User">
+		select * from User 
+	</select>
+</mapper>
