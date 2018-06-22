@@ -20,7 +20,7 @@ import com.slsd.entity.Flower;
  *
  */
 @Repository
-public class FlowerDaoimpl extends SqlSessionDaoSupport implements FlowerDao {
+public class FlowerDaoImpl extends SqlSessionDaoSupport implements FlowerDao {
 
 	@Autowired
 	@Qualifier("sqlSessionFactory")
