@@ -3,6 +3,7 @@ package com.slsd.service.impl;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.slsd.dao.Admindao;
 import com.slsd.entity.Admin;
@@ -19,6 +20,7 @@ import com.slsd.service.AdminService;
 public class AdminServiceImpl implements AdminService {
 
 	@Autowired
+	@Qualifier("admindaoimpl")
 	private Admindao Admindao;
 
 	public int login(Admin admin) {

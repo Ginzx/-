@@ -26,7 +26,7 @@ public class UserDaoTest {
 
 	@Test
 	public void testAddUser() {
-		User teacher = new User("zs", "1212","温州","12346","男","wqm",null,"nb");
+		User teacher = new User("zs", "1212","温州","12346","男","wqm",null,"nbnb");
 		boolean flag = userService.addUser(teacher);
 		System.out.println(flag);
 	}

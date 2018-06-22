@@ -23,14 +23,6 @@ public class AdmindaoTest {
 	private AdminService AdminService = null;
 	
 	@Test
-	public void test01() {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:spring/root-context.xml");
-		Admindao adao = (Admindao) ctx.getBean("Admindao");
-		System.out.println(adao.getClass());
-
-	}
-	
-	@Test
 	public void testLogin() {
 		Admin  a = new Admin("admin","admin");
 		int count = AdminService.login(a);

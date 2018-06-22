@@ -27,7 +27,7 @@ import com.slsd.entity.Admin;
 * @date: 2018年6月21日 下午2:32:04
 *
 */
-@Repository("Admindao")
+@Repository
 public class AdmindaoImpl extends SqlSessionDaoSupport implements Admindao {
 
 	@Autowired
