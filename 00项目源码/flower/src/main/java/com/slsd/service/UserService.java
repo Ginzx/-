@@ -1,13 +1,3 @@
-/**
-* All rights Reserved, Designed By www.ncetc.chinasofti.com
-* @Title: UserService.java
-* @Package com.slsd.service
-* @Description: TODO(用一句话描述该文件做什么)
-* @author: Administrator
-* @date: 2018年6月22日 上午10:23:58
-* @version V1.0
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
 package com.slsd.service;
 
 import java.util.List;

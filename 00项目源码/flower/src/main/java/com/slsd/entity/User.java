@@ -1,7 +1,7 @@
 package com.slsd.entity;
 
 /**
- * @ClassName: User
+ * @Classsername: User
  * @Description:TODO(用户实体类)
  * @author: cz
  * @date: 2018年6月21日 下午1:40:21
@@ -9,9 +9,9 @@ package com.slsd.entity;
  * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
  */
 public class User {
-	
-	private String uname;// 用户名
-	private String upwd;// 密码
+
+	private String username;// 用户名
+	private String userpwd;// 密码
 	private String address;// 地址
 	private String phone;// 电话
 	private String sex;// 性别
@@ -19,20 +19,20 @@ public class User {
 	private String photo;// 头像
 	private String instroduction;// 个人简介
 
-	public String getUname() {
-		return uname;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getUpwd() {
-		return upwd;
+	public String getUserpwd() {
+		return userpwd;
 	}
 
-	public void setUpwd(String upwd) {
-		this.upwd = upwd;
+	public void setUserpwd(String userpwd) {
+		this.userpwd = userpwd;
 	}
 
 	public String getAddress() {
@@ -83,11 +83,11 @@ public class User {
 		this.instroduction = instroduction;
 	}
 
-	public User(String uname, String upwd, String address, String phone, String sex, String name, String photo,
+	public User(String username, String userpwd, String address, String phone, String sex, String name, String photo,
 			String instroduction) {
 		super();
-		this.uname = uname;
-		this.upwd = upwd;
+		this.username = username;
+		this.userpwd = userpwd;
 		this.address = address;
 		this.phone = phone;
 		this.sex = sex;
@@ -102,8 +102,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [uname=" + uname + ", upwd=" + upwd + ", address=" + address + ", phone=" + phone + ", sex=" + sex
-				+ ", name=" + name + ", photo=" + photo + ", instroduction=" + instroduction + "]";
+		return "User [username=" + username + ", userpwd=" + userpwd + ", address=" + address + ", phone=" + phone
+				+ ", sex=" + sex + ", name=" + name + ", photo=" + photo + ", instroduction=" + instroduction + "]";
 	}
 
 }
