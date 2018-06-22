@@ -16,8 +16,8 @@
 		update flower set
 		price=#{price}, where id=#{id}
 	</update>
-	<update id="del" parameterType="int">
+	<delete id="del" parameterType="int">
 		delete from flower where
 		id=#{id}
-	</update>
+	</delete>
 </mapper>

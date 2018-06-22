@@ -17,10 +17,10 @@
 		update User set
 		photo=#{photo}, where username=#{username}
 	</update>
-	<update id="delUser"  parameterType="com.slsd.entity.User">
+	<delete id="delUser"  parameterType="com.slsd.entity.User">
 		delete from User where
 		username=#{username}
-	</update>
+	</delete>
 	<select id="getAll" resultType="com.slsd.entity.User">
 		select * from User 
 	</select>
