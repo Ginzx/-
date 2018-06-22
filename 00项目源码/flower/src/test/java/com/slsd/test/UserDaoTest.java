@@ -1,6 +1,6 @@
 package com.slsd.test;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -35,22 +35,35 @@ public class UserDaoTest {
 
 	@Test
 	public void testEditUser() {
-		fail("Not yet implemented");
+		User t = new User("zs", "12123");
+		boolean flag = userService.editUser(t);
+		System.out.println(flag);
 	}
 
 	@Test
 	public void testEditUserPhoto() {
-		fail("Not yet implemented");
+		User u = new User();
+		u.setUsername("zs");
+		u.setPhoto("../img/1.jpg");
+		boolean flag = userService.editUserPhoto(u);
+		System.out.println(flag);
 	}
 
 	@Test
 	public void testDelUser() {
-		fail("Not yet implemented");
+		User u = new User();
+		u.setUsername("zs");
+		boolean flag = userService.delUser(u);
+		System.out.println(flag);
 	}
 
 	@Test
 	public void testGetAll() {
-		fail("Not yet implemented");
+		List<User> ulist = userService.getAll();
+		for (User u : ulist) {
+			System.out.println(u);
+		}
 	}
+	
 
 }
