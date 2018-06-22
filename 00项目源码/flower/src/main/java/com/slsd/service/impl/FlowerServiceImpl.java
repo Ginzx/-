@@ -14,26 +14,26 @@ import com.slsd.service.FlowerService;
 public class FlowerServiceImpl implements FlowerService {
 
 	@Resource
-	private FlowerDao flowerdao;
+	private FlowerDao Flowerdao;
 
 	public List<Flower> findAll() {
-		return flowerdao.findAll();
+		return Flowerdao.findAll();
 	}
 
 	public Flower findbyid(int id) {
-		return flowerdao.findbyid(id);
+		return Flowerdao.findbyid(id);
 	}
 
 	public boolean addFlower(Flower flower) {
-		return (flowerdao.addFlower(flower) > 0) ? true : false;
+		return (Flowerdao.addFlower(flower) > 0) ? true : false;
 	}
 
 	public boolean editFlower(Flower flower) {
-		return (flowerdao.editFlower(flower) > 0) ? true : false;
+		return (Flowerdao.editFlower(flower) > 0) ? true : false;
 	}
 
 	public boolean delFlower(int id) {
-		return (flowerdao.delFlower(id) > 0) ? true : false;
+		return (Flowerdao.delFlower(id) > 0) ? true : false;
 	}
 
 }

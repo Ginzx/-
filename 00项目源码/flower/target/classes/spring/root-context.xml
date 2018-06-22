@@ -20,15 +20,7 @@
 		<property name="maxActive" value="10" />
 		<property name="maxIdle" value="5" />
 	</bean>
-	<!-- <context:property-placeholder location="classpath:oracle.properties" />
-	c3p0数据源配置
-	<bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">
-		<property name="driverClass" value="${jdbc.driverClassName}" />
-		<property name="jdbcUrl" value="${jdbc.url}" />
-		<property name="user" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
-	</bean> -->
-	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描mapper.xml文件 -->
