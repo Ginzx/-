@@ -34,7 +34,7 @@ public class CommentDaoImpl extends SqlSessionDaoSupport implements CommentDao {
 		return list;
 	}
 
-	public List<Comment> findbyflower() {
+	public List<Comment> findbyflower(int commentid) {
 		SqlSession sqlSession = this.getSqlSession();
 		List<Comment> list =  sqlSession.selectList("findbyflower");
 		return list;

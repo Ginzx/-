@@ -29,7 +29,7 @@ public interface CommentDao {
 	* @return: Comment
 	* @throws
 	*/
-	public List<Comment> findbyflower();
+	public List<Comment> findbyflower(int commentid);
 	
 	
 
