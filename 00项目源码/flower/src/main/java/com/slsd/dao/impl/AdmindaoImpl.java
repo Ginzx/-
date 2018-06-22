@@ -38,7 +38,7 @@ public class AdmindaoImpl extends SqlSessionDaoSupport implements Admindao {
 
 	public int login(Admin admin) {
 		SqlSession sqlSession = this.getSqlSession();
-		int num = sqlSession.selectOne("Login", admin);
+		int num = sqlSession.selectOne("login", admin);
 		return num;
 	}
 

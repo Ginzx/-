@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slsd.dao.FlowerDao">
+	<select id="findall" resultType="com.slsd.entity.Flower">
+		select * from flower order by id
+	</select>
+	<select id="findbyid" parameterType="int" resultType="com.slsd.entity.Flower">
+		select *
+		from flower where id=#{id}
+	</select>
+	<insert id="add" useGeneratedKeys="true" parameterType="com.slsd.entity.Flower">
+		insert into Flower (name,price,type,commentID,picture)
+		values(#{name},#{price},#{type},#{commentID},#{picture})
+	</insert>
+	<update id="edit" parameterType="com.slsd.entity.Flower">
+		update flower set
+		price=#{price}, where id=#{id}
+	</update>
+	<delete id="del" parameterType="int">
+		delete from flower where
+		id=#{id}
+	</delete>
+</mapper>
