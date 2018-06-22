@@ -41,18 +41,21 @@ public class CommentDaoImpl extends SqlSessionDaoSupport implements CommentDao {
 	}
 
 	public int add(Comment comment) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = this.getSqlSession();
+		int num= sqlSession.insert("add");
+		return num;
 	}
 
 	public int edit(Comment comment) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = this.getSqlSession();
+		int num= sqlSession.update("edit");
+		return num;
 	}
 
 	public int del(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession sqlSession = this.getSqlSession();
+		int num= sqlSession.delete("del");
+		return num;
 	}
 
 }
