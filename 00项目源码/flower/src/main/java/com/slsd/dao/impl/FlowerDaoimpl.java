@@ -19,7 +19,7 @@ import com.slsd.entity.Flower;
  * @date: 2018年6月21日 下午3:58:02
  *
  */
-@Repository("FlowerDao")
+@Repository
 public class FlowerDaoimpl extends SqlSessionDaoSupport implements FlowerDao {
 
 	@Autowired
