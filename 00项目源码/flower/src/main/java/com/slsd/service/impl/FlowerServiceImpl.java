@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.slsd.dao.FlowerDao;
@@ -13,7 +15,8 @@ import com.slsd.service.FlowerService;
 @Service("FlowerService")
 public class FlowerServiceImpl implements FlowerService {
 
-	@Resource
+	@Autowired
+	@Qualifier("flowerDaoimpl")
 	private FlowerDao flowerdao;
 
 	public List<Flower> findAll() {

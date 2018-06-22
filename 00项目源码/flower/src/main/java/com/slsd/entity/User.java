@@ -17,7 +17,7 @@ public class User {
 	private String sex;// 性别
 	private String name;// 用户姓名
 	private String photo;// 头像
-	private String instroduction;// 个人简介
+	private String introduction;// 个人简介
 
 	public String getUsername() {
 		return username;
@@ -75,16 +75,16 @@ public class User {
 		this.photo = photo;
 	}
 
-	public String getInstroduction() {
-		return instroduction;
+	public String getIntroduction() {
+		return introduction;
 	}
 
-	public void setInstroduction(String instroduction) {
-		this.instroduction = instroduction;
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
 	}
 
 	public User(String username, String userpwd, String address, String phone, String sex, String name, String photo,
-			String instroduction) {
+			String introduction) {
 		super();
 		this.username = username;
 		this.userpwd = userpwd;
@@ -93,7 +93,7 @@ public class User {
 		this.sex = sex;
 		this.name = name;
 		this.photo = photo;
-		this.instroduction = instroduction;
+		this.introduction = introduction;
 	}
 
 	public User() {
@@ -103,7 +103,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", userpwd=" + userpwd + ", address=" + address + ", phone=" + phone
-				+ ", sex=" + sex + ", name=" + name + ", photo=" + photo + ", instroduction=" + instroduction + "]";
+				+ ", sex=" + sex + ", name=" + name + ", photo=" + photo + ", introduction=" + introduction + "]";
 	}
 
+	
 }

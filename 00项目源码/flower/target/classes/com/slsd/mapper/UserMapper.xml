@@ -6,8 +6,8 @@
 	</select>
 	<insert id="addUser" useGeneratedKeys="true" 
 		parameterType="com.slsd.entity.User">
-		insert into User (username,userpwd,address,phone,sex,name,photo,instroduction)
-		values(#{username},#{userpwd},#{address},#{phone},#{sex},#{name},#{photo},#{instroduction})
+		insert into User (username,userpwd,address,phone,sex,name,photo,introduction)
+		values(#{username},#{userpwd},#{address},#{phone},#{sex},#{name},#{photo},#{introduction})
 	</insert>
 	<update id="editUser" parameterType="com.slsd.entity.User">
 		update User set

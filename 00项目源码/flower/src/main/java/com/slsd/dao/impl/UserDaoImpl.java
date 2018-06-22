@@ -21,7 +21,7 @@ import com.slsd.entity.User;
 *
 * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
 */
-@Repository("UserDao")
+@Repository
 public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
 
 	

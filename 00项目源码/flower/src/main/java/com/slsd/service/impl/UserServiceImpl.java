@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.slsd.dao.UserDao;
@@ -18,10 +20,11 @@ import com.slsd.service.UserService;
 *
 * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
 */
-@Service("UserService")
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
-	@Resource
+	@Autowired
+	@Qualifier("userDaoImpl")
 	private UserDao userDao;
 	
 	public boolean login(User user) {
