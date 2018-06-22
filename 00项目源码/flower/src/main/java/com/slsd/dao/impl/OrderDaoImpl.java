@@ -24,19 +24,19 @@ import com.slsd.entity.Flower;
 import com.slsd.entity.Order;
 
 /**
-* @ClassName: OrderDaoImpl
-* @Description:TODO(这里用一句话描述这个类的作用)
-* @author: hasee
-* @date: 2018年6月22日 下午3:46:36
-*
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
+ * @ClassName: OrderDaoImpl
+ * @Description:TODO(这里用一句话描述这个类的作用)
+ * @author: hasee
+ * @date: 2018年6月22日 下午3:46:36
+ *
+ * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+ */
 @Repository
 public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
-	
+
 	@Autowired
 	@Qualifier("sqlSessionFactory")
-	
+
 	public int addOrder(Order order) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.insert("add", order);
@@ -57,7 +57,7 @@ public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
 
 	public Order findByOrderid(int orderid) {
 		SqlSession sqlSession = this.getSqlSession();
-		Order order=sqlSession.selectOne("findbyid", orderid);
+		Order order = sqlSession.selectOne("findbyid", orderid);
 		return order;
 	}
 

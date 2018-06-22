@@ -22,19 +22,20 @@ import com.slsd.entity.Order;
 import com.slsd.service.OrderService;
 
 /**
-* @ClassName: OrderServiceImpl
-* @Description:TODO(这里用一句话描述这个类的作用)
-* @author: hasee
-* @date: 2018年6月22日 下午4:06:08
-*
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
+ * @ClassName: OrderServiceImpl
+ * @Description:TODO(这里用一句话描述这个类的作用)
+ * @author: hasee
+ * @date: 2018年6月22日 下午4:06:08
+ *
+ * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+ */
 @Service("OrderService")
 public class OrderServiceImpl implements OrderService {
+	
 	@Autowired
 	@Qualifier("orderDao")
 	private OrderDao OrderDao;
-	
+
 	public boolean addOrder(Order order) {
 		return (OrderDao.addOrder(order) > 0) ? true : false;
 	}
