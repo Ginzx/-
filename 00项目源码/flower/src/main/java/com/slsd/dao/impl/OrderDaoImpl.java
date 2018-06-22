@@ -33,8 +33,10 @@ import com.slsd.entity.Order;
 */
 @Repository
 public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
+	
 	@Autowired
 	@Qualifier("sqlSessionFactory")
+	
 	public int addOrder(Order order) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.insert("add", order);
