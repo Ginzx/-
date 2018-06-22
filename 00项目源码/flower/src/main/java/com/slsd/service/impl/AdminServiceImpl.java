@@ -20,11 +20,11 @@ import com.slsd.service.AdminService;
 public class AdminServiceImpl implements AdminService {
 
 	@Autowired
-	@Qualifier("admindaoimpl")
-	private Admindao Admindao;
+	@Qualifier("admindao")
+	private Admindao admindao;
 
 	public int login(Admin admin) {
-		return Admindao.login(admin);
+		return admindao.login(admin);
 	}
 
 }

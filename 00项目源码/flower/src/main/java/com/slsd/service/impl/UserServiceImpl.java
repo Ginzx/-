@@ -24,7 +24,7 @@ import com.slsd.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	@Qualifier("userDaoImpl")
+	@Qualifier("userDao")
 	private UserDao userDao;
 	
 	public boolean login(User user) {

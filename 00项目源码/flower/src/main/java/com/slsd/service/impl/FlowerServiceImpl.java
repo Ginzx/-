@@ -16,7 +16,7 @@ import com.slsd.service.FlowerService;
 public class FlowerServiceImpl implements FlowerService {
 
 	@Autowired
-	@Qualifier("flowerDaoimpl")
+	@Qualifier("flowerDao")
 	private FlowerDao Flowerdao;
 
 	public List<Flower> findAll() {
