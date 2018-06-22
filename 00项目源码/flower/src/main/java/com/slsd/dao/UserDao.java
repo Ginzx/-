@@ -1,13 +1,3 @@
-/**
-* All rights Reserved, Designed By www.ncetc.chinasofti.com
-* @Title: UserDao.java
-* @Package com.slsd.dao
-* @Description: TODO(用一句话描述该文件做什么)
-* @author: Administrator
-* @date: 2018年6月21日 下午3:58:05
-* @version V1.0
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
 package com.slsd.dao;
 
 import java.util.List;
