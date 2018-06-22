@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.slsd.dao.UserDao">
-<select id="login" parameterType="com.slsd.entity.User" resultType="boolean">
-		select count(*) from user where username=#{username},userpwd=#{userpwd}
+<select id="login" parameterType="com.slsd.entity.User" resultType="int">
+		select count(*) from user where username=#{username} and userpwd=#{userpwd}
 	</select>
 	<insert id="addUser" useGeneratedKeys="true" 
 		parameterType="com.slsd.entity.User">
@@ -11,11 +11,11 @@
 	</insert>
 	<update id="editUser" parameterType="com.slsd.entity.User">
 		update User set
-		userpwd=#{userpwd}, where username=#{username}
+		userpwd=#{userpwd} where username=#{username}
 	</update>
 	<update id="editUserPhoto" parameterType="com.slsd.entity.User">
 		update User set
-		photo=#{photo}, where username=#{username}
+		photo=#{photo} where username=#{username}
 	</update>
 	<delete id="delUser"  parameterType="com.slsd.entity.User">
 		delete from User where

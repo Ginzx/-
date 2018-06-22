@@ -21,7 +21,9 @@ public class UserDaoTest {
 	
 	@Test
 	public void testLogin() {
-		fail("Not yet implemented");
+		User t = new User("zs", "1212");
+		boolean flag = userService.login(t);
+		System.out.println(flag);
 	}
 
 	@Test

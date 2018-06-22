@@ -82,6 +82,13 @@ public class User {
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
+	
+
+	public User(String username, String userpwd) {
+		super();
+		this.username = username;
+		this.userpwd = userpwd;
+	}
 
 	public User(String username, String userpwd, String address, String phone, String sex, String name, String photo,
 			String introduction) {

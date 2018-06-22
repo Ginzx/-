@@ -14,7 +14,7 @@
 	</insert>
 	<update id="edit" parameterType="com.slsd.entity.Flower">
 		update flower set
-		price=#{price}, where id=#{id}
+		price=#{price}  where id=#{id}
 	</update>
 	<delete id="del" parameterType="int">
 		delete from flower where

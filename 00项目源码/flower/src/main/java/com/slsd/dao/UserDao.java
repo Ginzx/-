@@ -23,7 +23,7 @@ public interface UserDao {
 	* @return: boolean
 	* @throws
 	 */
-	public boolean login(User user);
+	public int login(User user);
 	
 	/**
 	 * 

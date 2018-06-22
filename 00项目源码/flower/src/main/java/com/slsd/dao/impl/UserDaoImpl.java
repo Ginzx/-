@@ -31,10 +31,10 @@ public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
 		super.setSqlSessionFactory(sqlSessionFactory);
 	}
 
-	public boolean login(User user) {
+	public int login(User user) {
 		SqlSession sqlSession = this.getSqlSession();
 		int num = sqlSession.selectOne("Login", user);
-		return num!=0?true:false;
+		return num;
 	}
 
 	public boolean addUser(User user) {
