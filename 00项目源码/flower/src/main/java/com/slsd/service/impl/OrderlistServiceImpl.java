@@ -1,14 +1,3 @@
-/**
-* All rights Reserved, Designed By www.ncetc.chinasofti.com
-* @Title: OrderServiceImpl.java
-* @Package com.slsd.service.impl
-* @Description: TODO(用一句话描述该文件做什么)
-* @author: hasee
-* @date: 2018年6月22日 下午4:06:08
-* @version V1.0
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
-
 package com.slsd.service.impl;
 
 import java.util.List;
@@ -18,38 +7,49 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.slsd.dao.OrderlistDao;
-import com.slsd.entity.Order;
 import com.slsd.entity.Orderlist;
 import com.slsd.service.OrderlistService;
 
-/**
- * @ClassName: OrderServiceImpl
- * @Description:TODO(这里用一句话描述这个类的作用)
- * @author: hasee
- * @date: 2018年6月22日 下午4:06:08
- *
- * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
- */
-@Service("OrderlistService")
+@Service("orderlistService")
 public class OrderlistServiceImpl implements OrderlistService {
+
 	@Autowired
 	@Qualifier("orderlistDao")
-	private OrderlistDao OrderlistDao;
-
+	private OrderlistDao orderlistDao;
+	
 	public boolean addOrderlist(Orderlist orderlist) {
-		return (OrderlistDao.addOrderlist(orderlist) > 0) ? true : false;
+		// TODO Auto-generated method stub
+		return orderlistDao.addOrderlist(orderlist);
 	}
 
-	public boolean delOrderlist(int listid) {
-		return (OrderlistDao.delOrderlist(listid) > 0) ? true : false;
+	public boolean delOrderlistBylid(int lid) {
+		// TODO Auto-generated method stub
+		return orderlistDao.delOrderlistBylid(lid);
 	}
 
-	public List<Orderlist> findAllorderlist() {
-		return OrderlistDao.findAllorderlist();
+	public boolean delOrderlistBylistID(int listID) {
+		// TODO Auto-generated method stub
+		return orderlistDao.delOrderlistBylistID(listID);
 	}
 
-	public Orderlist findByListid(int listid) {
-		return OrderlistDao.findByListid(listid);
+	public List<Orderlist> findAllOrderlist() {
+		// TODO Auto-generated method stub
+		return orderlistDao.findAllOrderlist();
+	}
+
+	public Orderlist findOrderlistByLid(int lid) {
+		// TODO Auto-generated method stub
+		return orderlistDao.findOrderlistByLid(lid);
+	}
+
+	public List<Orderlist> findOrderlistByListID(int listID) {
+		// TODO Auto-generated method stub
+		return orderlistDao.findOrderlistByListID(listID);
+	}
+
+	public boolean editOrderlist(Orderlist orderlist) {
+		// TODO Auto-generated method stub
+		return orderlistDao.editOrderlist(orderlist);
 	}
 
 }

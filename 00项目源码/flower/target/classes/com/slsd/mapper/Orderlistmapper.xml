@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.slsd.dao.OrderlistDao">
-	<select id="findall" resultType="com.slsd.entity.Orderlist">
+	<select id="findAllOrderlist" resultType="com.slsd.entity.Orderlist">
 		select * from orderlist order by
 		listid
 	</select>
-	<select id="findbyid" parameterType="int" resultType="com.slsd.entity.Orderlist">
+	<select id="findOrderlistByLid" parameterType="int" resultType="com.slsd.entity.Orderlist">
 		select
-		*from orderlist where listid=#{listid}
+		*from orderlist where lid=#{lid}
 	</select>
-	<insert id="add" useGeneratedKeys="true" parameterType="com.slsd.entity.Orderlist">
+	<select id="findOrderlistByListID" parameterType="int" resultType="com.slsd.entity.Orderlist">
+		select
+		*from orderlist where ListID=#{listID}
+	</select>
+	<insert id="addOrderlist" useGeneratedKeys="true" parameterType="com.slsd.entity.Orderlist">
 		insert
-		into orderlist (listId,lid,number,flower,price)
-		values(#{listID},#{lid},#{number},#{flower},#{price})
+		 orderlist (listId,number,flower,price)
+		values(#{listID},#{number},#{flower},#{price})
 	</insert>
-
-	<delete id="del" parameterType="int">
+	<update id="editOrderlist" parameterType="com.slsd.entity.Orderlist">
+		update Orderlist set
+		number=#{number},price=#{price} where lid=#{lid}
+	</update>
+	<delete id="delOrderlistBylid" parameterType="int">
 		delete from orderlist where
-		lisetid=#{listid}
+		lid=#{lid}
+	</delete>
+	<delete id="delOrderlistBylistID" parameterType="int">
+		delete from orderlist where
+		listID = #{listID}
 	</delete>
 </mapper>

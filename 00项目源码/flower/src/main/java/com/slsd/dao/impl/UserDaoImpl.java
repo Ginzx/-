@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.slsd.dao.UserDao;
-import com.slsd.entity.Flower;
 import com.slsd.entity.User;
 
 /**
@@ -57,7 +56,7 @@ public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
 
 	public boolean delUser(User user) {
 		SqlSession sqlSession = this.getSqlSession();
-		int row = sqlSession.delete("delete", user);
+		int row = sqlSession.delete("delUser", user);
 		return row!=0 ? true:false;
 	}
 

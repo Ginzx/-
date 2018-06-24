@@ -4,14 +4,14 @@
 	<select id="findall" resultType="com.slsd.entity.Comment">
 		select * from comment
 	</select>
-	<select id="findbyflower" parameterType="int"
+	<select id="findbyflower" parameterType="com.slsd.entity.Comment"
 		resultType="com.slsd.entity.Comment">
 		select * from comment where Commentid=#{Commentid}
 	</select>
 	<insert id="add" useGeneratedKeys="true" parameterType="com.slsd.entity.Comment">
 		insert
-		into comment where (commentid,comment,user) values
-		(#{commentid},#{comment},#{user})
+		into comment(commentID,comment,user) values
+		(#{commentID},#{comment},#{user})
 	</insert>
 	<update id="edit" parameterType="com.slsd.entity.Comment">
 		update comment set

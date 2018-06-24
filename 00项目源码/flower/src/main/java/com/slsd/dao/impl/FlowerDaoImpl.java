@@ -42,19 +42,19 @@ public class FlowerDaoImpl extends SqlSessionDaoSupport implements FlowerDao {
 
 	public int addFlower(Flower flower) {
 		SqlSession sqlSession = this.getSqlSession();
-		int row = sqlSession.insert("add", flower);
+		int row = sqlSession.insert("addFlower", flower);
 		return row;
 	}
 
 	public int editFlower(Flower flower) {
 		SqlSession sqlSession = this.getSqlSession();
-		int row = sqlSession.update("edit", flower);
+		int row = sqlSession.update("editFlower", flower);
 		return row;
 	}
 
 	public int delFlower(int id) {
 		SqlSession sqlSession = this.getSqlSession();
-		int row = sqlSession.delete("delete", id);
+		int row = sqlSession.delete("delFlower", id);
 		return row;
 	}
 
