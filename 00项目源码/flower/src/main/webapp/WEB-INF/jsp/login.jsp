@@ -10,7 +10,7 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,charset=UTF-8"  >
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>花语丨登录</title>
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -45,8 +45,8 @@
 			</ul>
 		</div>
 		<div class="center">
-		<form action="flower/login" method="post">
-			<table border="0" height="600px" width="500px" id="center-login">
+		<form action="login"  method="post">
+			<table  height="600px" width="500px" id="center-login">
 				<tr height="80px">
 					<td width="150px" align="center">用户名</td>
 					<td align="center"><input type="text" placeholder="请输入用户名"
@@ -60,7 +60,7 @@
 				<tr height="80px">
 					<td></td>
 					<td align="center"><input type="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="submit" value="注册"></td>
+						<input type="reset" value="注册"></td>
 				</tr>
 				<tr height="80px">
 					<td></td>
