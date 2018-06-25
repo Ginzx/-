@@ -14,6 +14,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href="flower/loginin">teacher/showTeacher2?id=69</a>
 </body>
 </html>

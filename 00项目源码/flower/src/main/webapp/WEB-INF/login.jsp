@@ -45,6 +45,7 @@
 			</ul>
 		</div>
 		<div class="center">
+		<form action="flower/login" method="post">
 			<table border="0" height="600px" width="500px" id="center-login">
 				<tr height="80px">
 					<td width="150px" align="center">用户名</td>
@@ -76,6 +77,7 @@
 					</td>
 				</tr>
 			</table>
+			</form>
 		</div>
 		<div class="down">
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
