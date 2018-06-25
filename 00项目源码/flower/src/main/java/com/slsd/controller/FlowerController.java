@@ -21,4 +21,9 @@ public class FlowerController {
 	public String all(HttpServletRequest request, Model model) {
 		return "allshop";
 	}
+	
+	@RequestMapping(value = "/shop", method = RequestMethod.GET)
+	public String one(HttpServletRequest request, Model model) {
+		return "shop";
+	}
 }
