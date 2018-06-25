@@ -66,4 +66,10 @@ public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
 		return ulist;
 	}
 
+	public User getByname() {
+		SqlSession sqlSession = this.getSqlSession();
+		User user = sqlSession.selectOne("getByname");
+		return user;
+	}
+
 }

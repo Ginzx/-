@@ -78,4 +78,13 @@ public interface UserDao {
 	* @throws
 	 */
 	public List<User> getAll();
+	
+	/**
+	* @Title: getByname
+	* @Description: 根据姓名查找用户
+	* @param: @return
+	* @return: User
+	* @throws
+	*/
+	public User getByname();
 }

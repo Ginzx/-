@@ -24,4 +24,7 @@
 	<select id="getAll" resultType="com.slsd.entity.User">
 		select * from User 
 	</select>
+	<select id="getByname" resultType="com.slsd.entity.User">
+		select * from User where username=#{username}
+	</select>
 </mapper>

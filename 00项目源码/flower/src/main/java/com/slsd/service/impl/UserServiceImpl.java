@@ -50,4 +50,8 @@ public class UserServiceImpl implements UserService {
 		return userDao.getAll();
 	}
 
+	public User getByname() {
+		return userDao.getByname();
+	}
+
 }
