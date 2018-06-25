@@ -1,0 +1,98 @@
+.all{
+	width: 1600px;
+}
+.m-top{
+	height:50px;
+	background-color: gainsboro;
+	margin-top: -12px;
+}
+.m-top ul{
+	margin-left: 110px;
+	font-size: 12px;
+	color: dimgrey;
+}
+.m-top ul li{
+	float: left;
+	list-style: none;
+	margin-top: 17px;
+	margin-left: 35px;
+}
+#m-top-1{
+	margin-left: 1200px;
+	font-size: 17px;
+}
+.m-top ul li a:link{
+	color: black;
+	text-decoration: none;
+}
+.s-top{
+	width: 1600px;
+	height: 200px;
+	background :url(../img/stone.jpg);
+}
+.s-top ul{
+	font-size: 16px;
+	color: dimgrey;
+	margin-left: 340px;
+}
+.s-top ul li{
+	float: left;
+	list-style: none;
+	margin-top: 30px;
+	margin-left: 120px;
+}
+.s-top ul li a:link{
+	color: dimgrey;
+	text-decoration: none;
+}
+.center1{
+	width: 1600px;
+	height: 500px;
+	z-index: 998;
+}
+.center2{
+	width: 1600px;
+	height: 400px;
+	margin-top: 30px;
+}
+.center3{
+	width: 1600px;
+	height: 400px;
+	margin-top: 50px;
+}
+.center4{
+	width: 1600px;
+	height: 480px;
+	margin-top: 50px;
+}
+.center4-1{
+	width: 800px;
+	height: 480px;
+}
+.center4-2{
+	width: 800px;
+	height: 480px;
+	margin-left: 800px;
+	margin-top: -480px;
+	background-color: whitesmoke;
+}
+#center4-table{
+	float: left;
+	margin-left: 110px;
+	margin-top: 40px;
+}
+.center4-table1{
+	width: 500px;
+	margin-left: 50px;
+	line-height: 2.5;
+}
+.center5{
+	width: 1600px;
+	height: 620px;
+	margin-top: 50px;
+}
+.down{
+	width: 1600px;
+	height: 700px;
+}
+

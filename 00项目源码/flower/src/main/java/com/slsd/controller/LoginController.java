@@ -12,7 +12,7 @@ import com.slsd.entity.Admin;
 import com.slsd.service.AdminService;
 
 @Controller
-@RequestMapping("/flower")
+
 public class LoginController {
 	
 	@Resource
