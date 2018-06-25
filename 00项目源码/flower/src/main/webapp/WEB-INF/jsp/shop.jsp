@@ -86,7 +86,7 @@
 			<img src="img/sign.png"
 				style="width: 90px; height: 90px; margin-left: 755px; margin-top: 55px;" />
 			<ul>
-				<li><a href="#">商城首页</a></li>
+				<li><a href="index">商城首页</a></li>
 				<li><a href="allshop">所有商品</a></li>
 				<li><a href="#">支付方式</a></li>
 				<li><a href="#">关于花语</a></li>
@@ -118,7 +118,7 @@
 								<ul class="clearfix animation03">
 									<li>
 										<div class="small-img">
-											<img src="img/flower1.png" />
+											<img src="${flower.picture }" />
 										</div>
 									</li>
 								</ul>
@@ -138,7 +138,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>单价:<span id="center-mid-left-3">${flower.price }</span></td>
+							<td>单价:<span id="center-mid-left-3">¥${flower.price }</span></td>
 						</tr>
 						<tr>
 							<td>
@@ -189,32 +189,18 @@
 					<div class="center-mid-left2-2">
 						<table border="0" width="340px" height="600px">
 							<tr>
-								<td colspan="2">热门推荐 HOT SALE</td>
+								<td colspan="2">相关推荐 HOT SALE</td>
 							</tr>
-							<tr>
-								<td><a href="#"><img src="img/flower1.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-								<td><a href="#"><img src="img/flower2.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-							</tr>
-							<tr>
-								<td><a href="#"><img src="img/flower3.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-								<td><a href="#"><img src="img/flower4.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-							</tr>
-							<tr>
-								<td><a href="#"><img src="img/flower5.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-								<td><a href="#"><img src="img/flower6.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-							</tr>
-							<tr>
-								<td><a href="#"><img src="img/flower7.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-								<td><a href="#"><img src="img/flower8.png"
-										width="100px" height="100px" style="margin-left: 35px;"></a></td>
-							</tr>
+							<c:forEach var="fl1" items="${allFlower1 }" step="1" end="8" begin="0" varStatus="fll1">
+								<c:if test="${fll1.index %2==0 }"><tr></c:if>
+									<td>
+										<a href="shop?id=${fl1.ID }"><img src="${fl1.picture }"
+										width="100px" height="100px" style="margin-left: 35px;"></a>
+									</td>
+								<c:if test="${fll1.index %2==1 }"></tr></c:if>
+							</c:forEach>
+							
+							
 						</table>
 					</div>
 				</div>

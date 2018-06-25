@@ -26,6 +26,11 @@ public class LoginController {
 	public String loginin() {
 		return "login";
 	}
+	
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index() {
+		return "index";
+	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(HttpServletRequest request,Model model) {

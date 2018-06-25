@@ -39,8 +39,8 @@
 			<img src="img/sign.png"
 				style="width: 90px; height: 90px; margin-left: 755px; margin-top: 55px;" />
 			<ul>
-				<li><a href="#">商城首页</a></li>
-				<li><a href="#">所有商品</a></li>
+				<li><a href="index">商城首页</a></li>
+				<li><a href="allshop">所有商品</a></li>
 				<li><a href="#">支付方式</a></li>
 				<li><a href="#">关于花语</a></li>
 			</ul>
