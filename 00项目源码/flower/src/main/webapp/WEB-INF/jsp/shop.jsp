@@ -134,20 +134,20 @@
 						id="center-mid-left-1">
 						<tr>
 							<td>
-								<h3>植物花卉001</h3>
+								<h3>${flower.name }</h3>
 							</td>
 						</tr>
 						<tr>
-							<td><span id="center-mid-left-3">¥5900</span></td>
+							<td><span id="center-mid-left-3">${flower.price }</span></td>
 						</tr>
 						<tr>
 							<td>
-								<div id="center-mid-left-4">商品编号004007</div>
+								<div id="center-mid-left-4">商品编号${flower.ID }</div>
 
 							</td>
 						</tr>
 						<tr>
-							<td>分类：<span id="center-mid-left-2">所有商品</span></td>
+							<td>分类：<span id="center-mid-left-2">${flower.type }</span></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="加入购物车"

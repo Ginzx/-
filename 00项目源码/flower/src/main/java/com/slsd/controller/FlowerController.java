@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.slsd.entity.Flower;
 import com.slsd.service.FlowerService;
 
 @Controller
@@ -22,8 +24,14 @@ public class FlowerController {
 		return "allshop";
 	}
 	
-	@RequestMapping(value = "/shop", method = RequestMethod.GET)
-	public String one(HttpServletRequest request, Model model) {
+	@RequestMapping(value = "/shop/{ID}", method = RequestMethod.GET)
+	public String one(@RequestParam("ID") String id, Model model) {
+		int ID = Integer.parseInt(id);
+		System.out.println("id:" + ID);
+		Flower f = flowerService.findbyid(ID);
+		model.addAttribute("flower", f);
 		return "shop";
 	}
+	
+	
 }
