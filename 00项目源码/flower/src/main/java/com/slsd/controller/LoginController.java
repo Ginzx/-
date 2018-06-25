@@ -12,15 +12,14 @@ import com.slsd.entity.Admin;
 import com.slsd.service.AdminService;
 
 @Controller
-
+@RequestMapping("/flower")
 public class LoginController {
 	
 	@Resource
 	private AdminService adminService;
 	
 	@RequestMapping(value = "/loginin", method = RequestMethod.GET)
-	public String loginin(HttpServletRequest request, Model model) {
-	
+	public String loginin() {
 		return "login";
 	}
 
