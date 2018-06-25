@@ -87,7 +87,7 @@
 				style="width: 90px; height: 90px; margin-left: 755px; margin-top: 55px;" />
 			<ul>
 				<li><a href="#">商城首页</a></li>
-				<li><a href="#">所有商品</a></li>
+				<li><a href="allshop">所有商品</a></li>
 				<li><a href="#">支付方式</a></li>
 				<li><a href="#">关于花语</a></li>
 			</ul>
@@ -96,7 +96,7 @@
 			<div class="center-top">
 				<div class="center-top-1">
 					<a href="#">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;/ <a href="#">所有商品</a>&nbsp;&nbsp;&nbsp;&nbsp;/
-					植物花卉008
+					${flower.name }
 				</div>
 			</div>
 			<div class="center-mid">
@@ -138,7 +138,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td><span id="center-mid-left-3">${flower.price }</span></td>
+							<td>单价:<span id="center-mid-left-3">${flower.price }</span></td>
 						</tr>
 						<tr>
 							<td>

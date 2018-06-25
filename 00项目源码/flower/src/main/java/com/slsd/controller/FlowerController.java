@@ -1,5 +1,7 @@
 package com.slsd.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,14 +26,23 @@ public class FlowerController {
 		return "allshop";
 	}
 	
-	@RequestMapping(value = "/shop/{ID}", method = RequestMethod.GET)
-	public String one(@RequestParam("ID") String id, Model model) {
+	@RequestMapping(value = "/shop", method = RequestMethod.GET)
+	public String one(@RequestParam("id") String id, Model model) {
 		int ID = Integer.parseInt(id);
-		System.out.println("id:" + ID);
 		Flower f = flowerService.findbyid(ID);
 		model.addAttribute("flower", f);
 		return "shop";
 	}
 	
+	@RequestMapping(value = "/addflower", method = RequestMethod.POST)
+	public String  addFlower(Flower f, Map<String, Object> model) {
+		boolean flag = flowerService.addFlower(f);
+		if(flag) {
+			return "index";
+		}else {
+			return "allshop";
+		}
+		
+	}
 	
 }
