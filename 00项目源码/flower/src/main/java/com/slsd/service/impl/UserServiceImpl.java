@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 	
 	public boolean login(User user) {
-		return userDao.login(user)!=0?true:false;
+		return (userDao.login(user) > 0) ? true : false;
 	}
 
 	public boolean addUser(User user) {
