@@ -1,6 +1,7 @@
 package com.slsd.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -59,6 +60,21 @@ public class FlowerController {
 		
 		String name = request.getParameter("flower");
 		System.out.println(name);
+		int num = Integer.parseInt(request.getParameter("number"));
+		System.out.println(num);
+		Double pic = Double.parseDouble(request.getParameter("price"))*num;
+		System.out.println(pic);
+		
+		Orderlist ol = new Orderlist();
+		ol.setFlower(name);
+		ol.setNumber(num);
+		ol.setPrice(pic);
+		
+		List<Orderlist> olist = new ArrayList<Orderlist>();
+		olist.add(ol);
+		
+		HttpSession session = request.getSession(true);
+		session.setAttribute("ollist",olist);
 		
 		return "allshop";
 	}

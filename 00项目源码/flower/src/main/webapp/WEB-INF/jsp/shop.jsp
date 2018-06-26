@@ -140,7 +140,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>单价:<span id="center-mid-left-3" name="price" value="${flower.price }" >¥${flower.price }</span></td>
+							<td>单价:<span id="center-mid-left-3"  ><input type="hidden" name="price" value="${flower.price }"/>¥${flower.price }</span></td>
 						</tr>
 						<tr>
 							<td>
