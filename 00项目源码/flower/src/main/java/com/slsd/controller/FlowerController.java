@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,7 @@ public class FlowerController {
 
 	@Resource
 	private FlowerService flowerService;
+	
 	
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
@@ -51,13 +53,14 @@ public class FlowerController {
 	}
 	
 	@RequestMapping(value = "/addCart", method = RequestMethod.POST)
-	public void addCart(@RequestParam("name") String name,@RequestParam("number") String number,@RequestParam("price") String price, Map<String, Object> model) {
-		int num = Integer.parseInt(number);
+	public String addCart(Orderlist olist, Map<String, Object> model) {
+		int num = olist.getNumber();
 		System.out.println(num);
-		double price1 = Double.parseDouble(price);
+		double price1 = olist.getPrice()*num;
 		System.out.println(price1);
-		
+		String name = olist.getFlower();
 		System.out.println(name);
+		return "index";
 		
 	}
 }
