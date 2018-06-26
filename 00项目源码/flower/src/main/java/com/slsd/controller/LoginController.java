@@ -93,8 +93,7 @@ public class LoginController {
 			User users=userService.getByname(user);
 			//将用户信息传递到接下来的页面
 			session.setAttribute("user", users);
-			System.out.println(users);
-		   return "information";
+		   return "index";
 		}else {
 			//如果既不是管理员账号也不是用户账号则弹出提示框，同时返回登录界面.
 			model.addAttribute("msg", "<script>alert('用户名或密码错误')</script>");  
