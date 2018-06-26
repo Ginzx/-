@@ -135,8 +135,8 @@
 						id="center-mid-left-1">
 						<form action="addCart" method="post">
 						<tr>
-							<td>
-								<h3><span  name="flower" value="${flower.name }">${flower.name }</span></h3>
+							<td >
+								<h3><span ><input type="hidden" name="flower" value="${flower.name }"/>${flower.name }</span></h3>
 							</td>
 						</tr>
 						<tr>
