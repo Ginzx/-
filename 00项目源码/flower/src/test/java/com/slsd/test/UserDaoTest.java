@@ -40,14 +40,6 @@ public class UserDaoTest {
 		System.out.println(flag);
 	}
 
-	@Test
-	public void testEditUserPhoto() {
-		User u = new User();
-		u.setUsername("zs");
-		u.setPhoto("../img/1.jpg");
-		boolean flag = userService.editUserPhoto(u);
-		System.out.println(flag);
-	}
 
 	@Test
 	public void testDelUser() {

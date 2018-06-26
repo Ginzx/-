@@ -60,8 +60,8 @@
 					</tr>
 					<tr height="80px">
 						<td></td>
-						<td align="center"><input type="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="reset" value="注册"></td>
+						<td><a><input type="submit" value="登录" style="color:black;"></a>
+						<a href="registerin"><input type="button" value="注册" style="color:black;"></a></td>
 					</tr>
 					<tr height="80px">
 						<td></td>
