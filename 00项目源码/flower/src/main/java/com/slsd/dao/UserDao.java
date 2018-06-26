@@ -39,24 +39,13 @@ public interface UserDao {
 	/**
 	 * 
 	* @Title: editUser
-	* @Description: TODO(修改用户信息:忘记密码)
+	* @Description: TODO(修改用户信息)
 	* @param: @param user
 	* @param: @return
 	* @return: boolean
 	* @throws
 	 */
 	public boolean editUser(User user);
-	
-	/**
-	 * 
-	* @Title: editUserPhoto
-	* @Description: TODO(修改用户头像)
-	* @param: @param user
-	* @param: @return
-	* @return: boolean
-	* @throws
-	 */
-	public boolean editUserPhoto(User user);
 	
 	/**
 	 * 

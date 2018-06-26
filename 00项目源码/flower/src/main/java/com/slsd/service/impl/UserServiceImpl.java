@@ -38,10 +38,6 @@ public class UserServiceImpl implements UserService {
 		return userDao.editUser(user);
 	}
 
-	public boolean editUserPhoto(User user) {
-		return userDao.editUserPhoto(user);
-	}
-
 	public boolean delUser(User user) {
 		return userDao.delUser(user);
 	}

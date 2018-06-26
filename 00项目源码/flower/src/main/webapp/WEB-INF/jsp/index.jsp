@@ -28,7 +28,7 @@
 			<ul id="m-top-1">
 				<li><a href="#"><span class="glyphicon glyphicon-search"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"
+				<li><a href="userin"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
 				<li><a href="#"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>

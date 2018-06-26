@@ -4,18 +4,13 @@
 <select id="login" parameterType="com.slsd.entity.User" resultType="int">
 		select count(*) from user where username=#{username} and userpwd=#{userpwd}
 	</select>
-	<insert id="addUser" useGeneratedKeys="true" 
-		parameterType="com.slsd.entity.User">
-		insert into User (username,userpwd,address,phone,sex,name,photo,introduction)
-		values(#{username},#{userpwd},#{address},#{phone},#{sex},#{name},#{photo},#{introduction})
+	<insert id="addUser"  parameterType="com.slsd.entity.User">
+		insert into User (username,userpwd,phone,photo)
+		values(#{username},#{userpwd},#{phone},#{photo})
 	</insert>
 	<update id="editUser" parameterType="com.slsd.entity.User">
 		update User set
-		userpwd=#{userpwd} where username=#{username}
-	</update>
-	<update id="editUserPhoto" parameterType="com.slsd.entity.User">
-		update User set
-		photo=#{photo} where username=#{username}
+		userpwd=#{userpwd},address=#{address},phone=#{phone},sex=#{sex},name=#{name},photo=#{photo} where username=#{username}
 	</update>
 	<delete id="delUser"  parameterType="com.slsd.entity.User">
 		delete from User where

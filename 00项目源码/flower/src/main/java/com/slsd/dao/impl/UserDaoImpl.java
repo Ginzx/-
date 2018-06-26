@@ -46,11 +46,6 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 		return row != 0 ? true : false;
 	}
 
-	public boolean editUserPhoto(User user) {
-		SqlSession sqlSession = this.getSqlSession();
-		int row = sqlSession.update("editUserPhoto", user);
-		return row != 0 ? true : false;
-	}
 
 	public boolean delUser(User user) {
 		SqlSession sqlSession = this.getSqlSession();

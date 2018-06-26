@@ -19,8 +19,6 @@ public interface UserService {
 
 	public boolean editUser(User user);
 
-	public boolean editUserPhoto(User user);
-
 	public boolean delUser(User user);
 
 	public List<User> getAll();
