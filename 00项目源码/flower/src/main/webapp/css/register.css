@@ -1,0 +1,77 @@
+.all{
+	width: 1600px;
+}
+.m-top{
+	height:50px;
+	background-color: gainsboro;
+	margin-top: -12px;
+}
+.m-top ul{
+	margin-left: 110px;
+	font-size: 12px;
+	color: dimgrey;
+}
+.m-top ul li{
+	float: left;
+	list-style: none;
+	margin-top: 17px;
+	margin-left: 35px;
+}
+#m-top-1{
+	margin-left: 1200px;
+	font-size: 17px;
+}
+.m-top ul li a:link{
+	color: black;
+	text-decoration: none;
+}
+.s-top{
+	width: 1600px;
+	height: 200px;
+	background :url(../img/stone.jpg);
+}
+.s-top ul{
+	font-size: 16px;
+	color: dimgrey;
+	margin-left: 340px;
+}
+.s-top ul li{
+	float: left;
+	list-style: none;
+	margin-top: 30px;
+	margin-left: 120px;
+}
+.s-top ul li a:link{
+	color: dimgrey;
+	text-decoration: none;
+}
+.center{
+	width: 1600px;
+	height: 800px;
+	background: url(../img/background.jpg);
+}
+#center-login{
+	background-color: white;
+	margin-left: 550px;
+	float: left;
+	margin-top: 100px;
+	opacity:0.9;
+	font-size: 12px;
+}
+.center table tr td a:link{
+	color: dimgray;
+	margin-left: 150px;
+	font-size: 12px;
+	text-decoration: none;
+}
+.center table tr td p{
+	line-height: 40px;
+	font-size: 12px;
+}
+.center-login-down{
+	margin: 25px;
+}
+.down{
+	width: 1600px;
+	height: 700px;
+}
