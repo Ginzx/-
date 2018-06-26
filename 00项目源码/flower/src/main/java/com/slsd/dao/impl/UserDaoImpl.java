@@ -13,17 +13,15 @@ import com.slsd.dao.UserDao;
 import com.slsd.entity.User;
 
 /**
-* @ClassName: UserDaoImpl
-* @Description:TODO(用户接口实现)
-* @author: 邹博
-* @date: 2018年6月22日 上午10:09:04
-*
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
+ * @ClassName: UserDaoImpl
+ * @Description:TODO(用户接口实现)  @author: 邹博
+ * @date: 2018年6月22日 上午10:09:04
+ *
+ * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+ */
 @Repository
-public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
+public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 
-	
 	@Autowired
 	@Qualifier("sqlSessionFactory")
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
@@ -39,25 +37,25 @@ public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
 	public boolean addUser(User user) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.insert("addUser", user);
-		return row!=0 ? true:false;
+		return row != 0 ? true : false;
 	}
 
 	public boolean editUser(User user) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.update("editUser", user);
-		return row!=0 ? true:false;
+		return row != 0 ? true : false;
 	}
 
 	public boolean editUserPhoto(User user) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.update("editUserPhoto", user);
-		return row!=0 ? true:false;
+		return row != 0 ? true : false;
 	}
 
 	public boolean delUser(User user) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.delete("delUser", user);
-		return row!=0 ? true:false;
+		return row != 0 ? true : false;
 	}
 
 	public List<User> getAll() {
@@ -66,10 +64,10 @@ public class UserDaoImpl  extends SqlSessionDaoSupport implements UserDao {
 		return ulist;
 	}
 
-	public User getByname() {
+	public User getByname(User user) {
 		SqlSession sqlSession = this.getSqlSession();
-		User user = sqlSession.selectOne("getByname");
-		return user;
+		User users = sqlSession.selectOne("getByname", user);
+		return users;
 	}
 
 }

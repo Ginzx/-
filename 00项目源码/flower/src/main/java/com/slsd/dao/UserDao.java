@@ -86,5 +86,5 @@ public interface UserDao {
 	* @return: User
 	* @throws
 	*/
-	public User getByname();
+	public User getByname(User user);
 }
