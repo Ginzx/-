@@ -59,6 +59,7 @@
 						$(this).next().val(num);
 					});
 				})
+				
 			});
 		</script>
 
@@ -132,13 +133,14 @@
 				<div class="center-mid-left">
 					<table border="0" width="300px" height="300px"
 						id="center-mid-left-1">
+						<form action="addCart?name='${flower.name }&price='${flower.price }'&number='${".num"}'" method="post">
 						<tr>
 							<td>
-								<h3>${flower.name }</h3>
+								<h3><span >${flower.name }</span></h3>
 							</td>
 						</tr>
 						<tr>
-							<td>单价:<span id="center-mid-left-3">¥${flower.price }</span></td>
+							<td>单价:<span id="center-mid-left-3" >¥${flower.price }</span></td>
 						</tr>
 						<tr>
 							<td>
@@ -147,16 +149,17 @@
 							</td>
 						</tr>
 						<tr>
-							<td>分类：<span id="center-mid-left-2">${flower.type }</span></td>
+							<td>分类：<span id="center-mid-left-2" >${flower.type }</span></td>
 						</tr>
 						<tr>
-							<td><input type="submit" value="加入购物车"
+							<td><input type="submit" value="加入购物车" id="addCard"
 								style="background: whitesmoke; width: 120px; height: 40px; margin-left: 15px;">
 								<div class="gw_num">
 									<em class="jian">-</em> <input type="text" value="1"
-										class="num" /> <em class="add">+</em>
+										class="num"  /> <em class="add">+</em>
 								</div></td>
 						</tr>
+						</form>
 					</table>
 				</div>
 				<div class="center-mid-left2">

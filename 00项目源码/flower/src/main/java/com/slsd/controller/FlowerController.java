@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.slsd.entity.Flower;
+import com.slsd.entity.Orderlist;
 import com.slsd.service.FlowerService;
 
 @Controller
@@ -49,4 +50,14 @@ public class FlowerController {
 		
 	}
 	
+	@RequestMapping(value = "/addCart", method = RequestMethod.POST)
+	public void addCart(@RequestParam("name") String name,@RequestParam("number") String number,@RequestParam("price") String price, Map<String, Object> model) {
+		int num = Integer.parseInt(number);
+		System.out.println(num);
+		double price1 = Double.parseDouble(price);
+		System.out.println(price1);
+		
+		System.out.println(name);
+		
+	}
 }
