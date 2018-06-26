@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,6 +44,13 @@ public class LoginController {
 		return "login";
 	}
 	
+	/**
+	* @Title: index
+	* @Description: 跳转到主页面
+	* @param: @return
+	* @return: String
+	* @throws
+	*/
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index() {
 		return "index";
@@ -66,11 +74,13 @@ public class LoginController {
         Admin admin = new Admin();
 		User user=new User();
 		
-		user.setName(name);
+		user.setUsername(name);
 		user.setUserpwd(pwd);
 		
 		admin.setName(name);
 		admin.setPwd(pwd);
+		
+		HttpSession session = request.getSession(true);
 		//验证是否是管理员账号
 		int num = adminService.login(admin);
 		//验证是否是用户账号
@@ -78,12 +88,13 @@ public class LoginController {
 		if (num == 1) {
 			//如果是管理员账号则进入管理员界面
 			return "index";
-		} else if(flag==true) {
+		} else if(flag) {
 			//如果是用户账号，先从数据库中便利出相关的用户信息
 			User users=userService.getByname(user);
 			//将用户信息传递到接下来的页面
-			model.addAttribute("user", users);
-		   return "index";
+			session.setAttribute("user", users);
+			System.out.println(users);
+		   return "information";
 		}else {
 			//如果既不是管理员账号也不是用户账号则弹出提示框，同时返回登录界面.
 			model.addAttribute("msg", "<script>alert('用户名或密码错误')</script>");  
