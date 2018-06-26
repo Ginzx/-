@@ -11,6 +11,13 @@ import com.slsd.dao.FlowerDao;
 import com.slsd.entity.Flower;
 import com.slsd.service.FlowerService;
 
+/**
+* @ClassName: FlowerServiceImpl
+* @Description:TODO(这里用一句话描述这个类的作用)
+* @author: 王启明
+* @date: 2018年6月24日 下午4:58:47
+*
+*/
 @Service("FlowerService")
 public class FlowerServiceImpl implements FlowerService {
 
