@@ -1,10 +1,13 @@
 package com.slsd.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.slsd.entity.Flower;
+import com.slsd.entity.Orderlist;
 import com.slsd.service.FlowerService;
 
 @Controller
@@ -20,6 +24,7 @@ public class FlowerController {
 
 	@Resource
 	private FlowerService flowerService;
+	
 	
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
@@ -49,4 +54,12 @@ public class FlowerController {
 		
 	}
 	
+	@RequestMapping(value = "/addCart", method = RequestMethod.POST)
+	public String addCart(HttpServletRequest request, Model model) throws IOException {
+		
+		String name = request.getParameter("flower");
+		System.out.println(name);
+		
+		return "allshop";
+	}
 }
