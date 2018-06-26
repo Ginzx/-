@@ -30,7 +30,7 @@
 						aria-hidden="true"></span></a></li>
 				<li><a href="userin"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span
+				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
 			</ul>

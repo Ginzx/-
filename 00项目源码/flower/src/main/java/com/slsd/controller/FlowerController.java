@@ -26,6 +26,13 @@ public class FlowerController {
 	@Resource
 	private FlowerService flowerService;
 	
+	List<Orderlist> olist = new ArrayList<Orderlist>();
+	
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public String cart(HttpServletRequest request, Model model) {
+		
+		return "shoppingC";
+	}
 	
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
@@ -70,7 +77,7 @@ public class FlowerController {
 		ol.setNumber(num);
 		ol.setPrice(pic);
 		
-		List<Orderlist> olist = new ArrayList<Orderlist>();
+		
 		olist.add(ol);
 		
 		HttpSession session = request.getSession(true);
