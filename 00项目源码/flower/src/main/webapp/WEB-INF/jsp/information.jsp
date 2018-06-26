@@ -69,12 +69,12 @@
 									<input type="radio" name="sex" style="margin-left: 100px;" value="女" <c:if test="${user.sex eq '女'}"> checked="checked"</c:if> />女
 								</td>
 						</tr>
-						<tr height="80px">
+						<tr height="100px">
 							<td>头像</td>
-							<td><img src="${user.photo}" width="60px" height="60px"
-								style="margin-left: 100px;"> <input type="file"
-								name="pictureFile" value="上传图片"
-								style="margin-left: 100px; width: 150px;" /></td>
+							<td><img src="${user.photo}" width="80px" height="80px"
+								style="margin-left: 220px;margin-top:10px;"> <input type="file"
+								name="pictureFile" value="上传图片" 
+								style="margin-left: 170px;margin-bottom:20px; width: 250px;" /></td>
 						</tr>
 						<tr height="80px">
 							<td>联系方式</td>
