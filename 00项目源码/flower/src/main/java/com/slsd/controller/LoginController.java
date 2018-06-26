@@ -1,5 +1,7 @@
 package com.slsd.controller;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,7 +35,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(HttpServletRequest request,Model model) {
+	public String login(HttpServletRequest request,Model model) throws IOException {
 		String name = request.getParameter("name");
 		String pwd = request.getParameter("pwd");
         Admin admin = new Admin();
@@ -46,9 +48,13 @@ public class LoginController {
 		boolean flag = userService.login(user);
 		if (num == 1) {
 			return "index";
-		} else {
-			return "error";
+		} else if(flag==true) {
+			User users=userService.getByname(user);
+			model.addAttribute("user", users);
+		   return "index";
+		}else {
+			model.addAttribute("msg", "<script>alert('用户名或密码错误')</script>");  
+			return "login";
 		}
-
 	}
 }

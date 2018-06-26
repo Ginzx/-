@@ -15,6 +15,7 @@
 <title>花语丨登录</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/login.css" rel="stylesheet" />
+
 </head>
 <body>
 	<div class="all">
@@ -45,44 +46,45 @@
 			</ul>
 		</div>
 		<div class="center">
-		<form action="login"  method="post">
-			<table  height="600px" width="500px" id="center-login">
-				<tr height="80px">
-					<td width="150px" align="center">用户名</td>
-					<td align="center"><input type="text" placeholder="请输入用户名"
-						style="width: 250px;" name="name"></td>
-				</tr>
-				<tr height="80px">
-					<td width="150px" align="center">密&nbsp;&nbsp;&nbsp;&nbsp;码</td>
-					<td align="center"><input type="password" placeholder="请输入密码"
-						style="width: 250px;" name="pwd"></td>
-				</tr>
-				<tr height="80px">
-					<td></td>
-					<td align="center"><input type="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="reset" value="注册"></td>
-				</tr>
-				<tr height="80px">
-					<td></td>
-					<td><a href="#">忘记密码？点击这里找回</a></td>
-				</tr>
-				<tr>
-					<td colspan="2" id="center-login-1">
-						<div class="center-login-down">
-							<p>用户注册/登录说明</p>
-							<p>1、实际使用之前，需配置用户管理组件中的相关邮件。详情请参考教程：《用户管理中相关邮件的配置》</p>
-							<p>2、新用户注册后的审核方式有三种：自动核准、邮件激活、需要管理员批准（即人工审核），详情可参考教程《如何设置用户注册后的审核方式》</p>
-						</div>
+			<form action="login" method="post">
+				<table height="600px" width="500px" id="center-login">
+					<tr height="80px">
+						<td width="150px" align="center">用户名</td>
+						<td align="center"><input type="text" placeholder="请输入用户名"
+							style="width: 250px;" name="name"></td>
+					</tr>
+					<tr height="80px">
+						<td width="150px" align="center">密&nbsp;&nbsp;&nbsp;&nbsp;码</td>
+						<td align="center"><input type="password" placeholder="请输入密码"
+							style="width: 250px;" name="pwd"></td>
+					</tr>
+					<tr height="80px">
+						<td></td>
+						<td align="center"><input type="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="reset" value="注册"></td>
+					</tr>
+					<tr height="80px">
+						<td></td>
+						<td><a href="#">忘记密码？点击这里找回</a></td>
+					</tr>
+					<tr>
+						<td colspan="2" id="center-login-1">
+							<div class="center-login-down">
+								<p>用户注册/登录说明</p>
+								<p>1、实际使用之前，需配置用户管理组件中的相关邮件。详情请参考教程：《用户管理中相关邮件的配置》</p>
+								<p>2、新用户注册后的审核方式有三种：自动核准、邮件激活、需要管理员批准（即人工审核），详情可参考教程《如何设置用户注册后的审核方式》</p>
+							</div>
 
-					</td>
-				</tr>
-			</table>
+						</td>
+					</tr>
+				</table>
 			</form>
 		</div>
 		<div class="down">
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
 	</div>
+	 ${msg }</br>  
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 </body>
