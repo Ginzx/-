@@ -11,7 +11,7 @@ import com.slsd.service.AdminService;
 /**
 * @ClassName: AdminServiceImpl
 * @Description:TODO(管理员功能实现)
-* @author: Administrator
+* @author: 王启明
 * @date: 2018年6月21日 下午2:53:06
 *
 */

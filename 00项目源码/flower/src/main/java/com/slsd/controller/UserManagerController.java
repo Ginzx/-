@@ -41,11 +41,21 @@ public class UserManagerController {
 		return "information";
 	}
 	
+	/**
+	* @Title: addUser
+	* @Description: 修改用户信息
+	* @param: @param request
+	* @param: @param pictureFile
+	* @param: @return
+	* @param: @throws Exception
+	* @return: String
+	* @throws
+	*/
 	@RequestMapping(value = "/editUser")  
     public String addUser(HttpServletRequest request ,MultipartFile pictureFile) throws Exception{  
 		HttpSession session = request.getSession(true);
 		User users=(User) request.getSession().getAttribute("user");
-        //使用UUID给图片重命名，并去掉四个“-”  
+        //使用UUID给图片重命名，并去掉四个“-” ，可以有效避免图片名重复 
         String name1 = UUID.randomUUID().toString().replaceAll("-", "");  
         //获取文件的扩展名  
         String ext = FilenameUtils.getExtension(pictureFile.getOriginalFilename());  
@@ -76,7 +86,7 @@ public class UserManagerController {
         System.out.println(flag);
         
         session.setAttribute("user", users);
-        //重定向到查询所有用户的Controller，测试图片回显  
+        //重定向到查询所有用户的Controller，测试图片显示
         return "information";  
           
     }  

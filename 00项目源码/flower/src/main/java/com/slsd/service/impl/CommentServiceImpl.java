@@ -10,6 +10,13 @@ import com.slsd.dao.CommentDao;
 import com.slsd.entity.Comment;
 import com.slsd.service.CommentService;
 
+/**
+* @ClassName: CommentServiceImpl
+* @Description:TODO(这里用一句话描述这个类的作用)
+* @author: 王启明
+* @date: 2018年6月24日 下午4:58:26
+*
+*/
 @Service("CommentService")
 public class CommentServiceImpl implements CommentService {
 

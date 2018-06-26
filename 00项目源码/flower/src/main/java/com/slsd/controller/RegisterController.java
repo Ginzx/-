@@ -60,7 +60,7 @@ public class RegisterController {
 
 		// 每个用户赋予初始头像
 		user.setPhoto("upload/touxiang/head.jpg");
-
+        // 注册详细信息
 		String username = request.getParameter("username");
 		String pwd = request.getParameter("pwd");
 		String pwd1 = request.getParameter("pwd1");

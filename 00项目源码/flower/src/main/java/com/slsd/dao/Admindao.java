@@ -11,6 +11,14 @@ import com.slsd.entity.Admin;
 */
 public interface Admindao {
 
+	/**
+	* @Title: login
+	* @Description:登录
+	* @param: @param admin
+	* @param: @return
+	* @return: int
+	* @throws
+	*/
 	public int login(Admin admin);
 	
 }
