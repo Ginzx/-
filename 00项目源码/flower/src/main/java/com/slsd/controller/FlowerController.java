@@ -8,7 +8,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.slsd.entity.Flower;
-import com.slsd.entity.Orderlist;
+import com.slsd.entity.OrderlistFlower;
 import com.slsd.service.FlowerService;
 
 @Controller
@@ -26,13 +25,16 @@ public class FlowerController {
 	@Resource
 	private FlowerService flowerService;
 	
-	List<Orderlist> olist = new ArrayList<Orderlist>();
+	List<OrderlistFlower> olist = new ArrayList<OrderlistFlower>();
 	
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String cart(HttpServletRequest request, Model model) {
 		
 		return "shoppingC";
 	}
+	
+
+	
 	
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
@@ -51,6 +53,7 @@ public class FlowerController {
 		return "shop";
 	}
 	
+	
 	@RequestMapping(value = "/addflower", method = RequestMethod.POST)
 	public String  addFlower(Flower f, Map<String, Object> model) {
 		boolean flag = flowerService.addFlower(f);
@@ -65,24 +68,54 @@ public class FlowerController {
 	@RequestMapping(value = "/addCart", method = RequestMethod.POST)
 	public String addCart(HttpServletRequest request, Model model) throws IOException {
 		
+		int flag=0;
 		String name = request.getParameter("flower");
-		System.out.println(name);
+		String type = request.getParameter("type");
+		String src = request.getParameter("picture");
 		int num = Integer.parseInt(request.getParameter("number"));
-		System.out.println(num);
-		Double pic = Double.parseDouble(request.getParameter("price"))*num;
-		System.out.println(pic);
+		int id = Integer.parseInt(request.getParameter("ID"));
+		Double pic = Double.parseDouble(request.getParameter("price"));
+		Double money = pic*num;
 		
-		Orderlist ol = new Orderlist();
-		ol.setFlower(name);
-		ol.setNumber(num);
-		ol.setPrice(pic);
+		OrderlistFlower olf = new OrderlistFlower();
+		olf.setFlower(name);
+		olf.setNumber(num);
+		olf.setPrice(money);
+		olf.setPrice2(pic);
+		olf.setID(id);
+		olf.setPicture(src);
+		olf.setType(type);
 		
+		for (OrderlistFlower oF : olist) {
+			if(name.equals(oF.getFlower()) ) {
+				 flag = 1;
+				 model.addAttribute("err2", "<script>alert('购物车中已有此商品')</script>");  
+			}
+		}
 		
-		olist.add(ol);
+		if(flag==0) {
+			olist.add(olf);
+		}
 		
 		HttpSession session = request.getSession(true);
 		session.setAttribute("ollist",olist);
 		
+		List<Flower> flist = flowerService.findAll();
+		model.addAttribute("allFlower", flist);
+		
 		return "allshop";
+	}
+	
+	@RequestMapping(value = "/del", method = RequestMethod.GET)
+	public String del(@RequestParam("id") String id, Model model) {
+		int ID = Integer.parseInt(id);
+		for(int i =0;i<olist.size();i++) {
+			if(olist.get(i).getID()==ID) {
+				olist.remove(i);
+			}
+		}
+	
+		return "shoppingC";
+		
 	}
 }

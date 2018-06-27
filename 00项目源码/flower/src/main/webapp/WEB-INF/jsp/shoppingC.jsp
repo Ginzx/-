@@ -88,21 +88,22 @@
 		</div>
 		<div class="order_content">
 			<c:forEach var="orderl" items="${ollist }">
+			
 			<ul class="order_lists">
 				<li class="list_chk">
-					<input type="checkbox" id="checkbox_2" class="son_check">
-					<label for="checkbox_2"></label>
+					<input type="checkbox" id="checkbox_'${ orderl.ID}'" class="son_check" >
+					<label for="checkbox_'${ orderl.ID}'"></label>
 				</li>
 				<li class="list_con">
-					<div class="list_img"><a href="javascript:;"><img src="" alt=""></a></div>
+					<div class="list_img"><a href="javascript:;"><img src="${orderl.picture }" ></a></div>
 					<div class="list_text"><a href="javascript:;">${orderl.flower }</a></div>
 				</li>
 				<li class="list_info">
-					<p>规格：默认</p>
-					<p>尺寸：16*16*3(cm)</p>
+					<p>规格：${orderl.type }</p>
+					<p>ID：${orderl.ID }</p>
 				</li>
 				<li class="list_price">
-					<p class="price">￥</p>
+					<p class="price">￥${orderl.price2 }</p>
 				</li>
 				<li class="list_amount">
 					<div class="amount_box">
@@ -115,7 +116,7 @@
 					<p class="sum_price">￥${orderl.price }</p>
 				</li>
 				<li class="list_op">
-					<p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+					<p class="del" ><a href="del?id=${orderl.ID }" >移除商品</a></p>
 				</li>
 			</ul>
 			</c:forEach>
@@ -146,9 +147,7 @@
 <script src="js/carts.js"></script>
 						
 			</div>
-			<div class="down">
-				<img src="img/down.png" style="width: 1600px; height: 700px;" />
-			</div>
+			
 		</div>
 		<script src="js/jquery-2.1.1.min.js"></script>
 		<script src="js/bootstrap.js"></script>

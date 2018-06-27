@@ -136,7 +136,9 @@
 						<form action="addCart" method="post">
 						<tr>
 							<td >
-								<h3><span ><input type="hidden" name="flower" value="${flower.name }"/>${flower.name }</span></h3>
+								<h3><span ><input type="hidden" name="flower" value="${flower.name }"/>${flower.name }</span>
+									<input type="hidden" name="picture" value="${flower.picture }"/>
+								</h3>
 							</td>
 						</tr>
 						<tr>
@@ -144,12 +146,12 @@
 						</tr>
 						<tr>
 							<td>
-								<div id="center-mid-left-4" name="lid" value="">商品编号${flower.ID }</div>
+								<div id="center-mid-left-4" name="lid" ><input type="hidden" name="ID" value="${flower.ID }"/>商品编号${flower.ID }</div>
 
 							</td>
 						</tr>
 						<tr>
-							<td>分类：<span id="center-mid-left-2" name="listID" value="">${flower.type }</span></td>
+							<td>分类：<span id="center-mid-left-2" ><input type="hidden" name="type" value="${flower.type }"/>${flower.type }</span></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="加入购物车" 
@@ -227,6 +229,7 @@
 		<div class="down">
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
+		<div>${err2 }</div>
 	</div>
 	<script type="text/javascript" src="js/magnifier.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
