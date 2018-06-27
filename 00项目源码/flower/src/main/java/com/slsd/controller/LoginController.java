@@ -1,6 +1,7 @@
 package com.slsd.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.slsd.entity.Admin;
+import com.slsd.entity.AdminOrder;
+import com.slsd.entity.Flower;
 import com.slsd.entity.User;
 import com.slsd.service.AdminService;
+import com.slsd.service.FlowerService;
 import com.slsd.service.UserService;
 
 /**
@@ -31,6 +35,10 @@ public class LoginController {
 	
 	@Resource
 	private UserService userService;
+	
+
+	@Resource
+	private FlowerService flowerService;
 
 	/**
 	* @Title: loginin
@@ -86,8 +94,18 @@ public class LoginController {
 		//验证是否是用户账号
 		boolean flag = userService.login(user);
 		if (num == 1) {
+			//查询所有订单信息
+			List<AdminOrder> adminorders= adminService.findorder();
+			//查询所有用户信息
+			List<User> users1=userService.getAll();
+			//查询所有商品信息
+			List<Flower> flowers=flowerService.findAll();
+			
+			session.setAttribute("orders", adminorders);
+			session.setAttribute("flowers", flowers);
+			session.setAttribute("users", users1);
 			//如果是管理员账号则进入管理员界面
-			return "index";
+			return "admin";
 		} else if(flag) {
 			//如果是用户账号，先从数据库中便利出相关的用户信息
 			User users=userService.getByname(user);
@@ -100,4 +118,6 @@ public class LoginController {
 			return "login";
 		}
 	}
+	
+	
 }

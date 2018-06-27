@@ -10,6 +10,8 @@
 
 package com.slsd.dao.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -19,6 +21,7 @@ import org.springframework.stereotype.Repository;
 
 import com.slsd.dao.Admindao;
 import com.slsd.entity.Admin;
+import com.slsd.entity.AdminOrder;
 
 /**
 * @ClassName: AdmindaoImpl
@@ -40,6 +43,12 @@ public class AdmindaoImpl extends SqlSessionDaoSupport implements Admindao {
 		SqlSession sqlSession = this.getSqlSession();
 		int num = sqlSession.selectOne("login", admin);
 		return num;
+	}
+
+	public List<AdminOrder> findorder() {
+		SqlSession sqlSession = this.getSqlSession();
+		List<AdminOrder> adminorder=sqlSession.selectList("findorder");
+		return adminorder;
 	}
 
 }

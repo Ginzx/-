@@ -1,6 +1,9 @@
 package com.slsd.dao;
 
+import java.util.List;
+
 import com.slsd.entity.Admin;
+import com.slsd.entity.AdminOrder;
 
 /**
 * @ClassName: Admindao
@@ -20,5 +23,14 @@ public interface Admindao {
 	* @throws
 	*/
 	public int login(Admin admin);
+	
+	/**
+	* @Title: findorder
+	* @Description: 管理员查询所有订单
+	* @param: @return
+	* @return:  List<AdminOrder>
+	* @throws
+	*/
+	public  List<AdminOrder> findorder();
 	
 }

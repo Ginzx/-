@@ -1,11 +1,14 @@
 package com.slsd.service.impl;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.slsd.dao.Admindao;
 import com.slsd.entity.Admin;
+import com.slsd.entity.AdminOrder;
 import com.slsd.service.AdminService;
 
 /**
@@ -24,6 +27,10 @@ public class AdminServiceImpl implements AdminService {
 
 	public int login(Admin admin) {
 		return admindao.login(admin);
+	}
+
+	public List<AdminOrder> findorder() {
+		return admindao.findorder();
 	}
 
 }

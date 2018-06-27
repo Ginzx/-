@@ -1,6 +1,9 @@
 package com.slsd.service;
 
+import java.util.List;
+
 import com.slsd.entity.Admin;
+import com.slsd.entity.AdminOrder;
 
 /**
 * @ClassName: AdminService
@@ -12,4 +15,6 @@ import com.slsd.entity.Admin;
 public interface AdminService {
 
 	public int login(Admin admin);
+	
+	public List<AdminOrder> findorder();
 }
