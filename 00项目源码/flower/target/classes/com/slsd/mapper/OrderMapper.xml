@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.slsd.dao.OrderlistDao">
-	<select id="findAllOrderlist" resultType="com.slsd.entity.Orderlist">
-		select * from orderlist order by
-		listid
+
+<mapper namespace="com.slsd.dao.OrderDao">
+
+	<select id="findAll" resultType="com.slsd.entity.Order">
+		select * from orders order by
+		orderid
 	</select>
-	<select id="findOrderlistByLid" parameterType="int" resultType="com.slsd.entity.Orderlist">
+	<select id="findByOrderid" parameterType="int" resultType="com.slsd.entity.Order">
 		select
-		*from orderlist where lid=#{lid}
+		*from orders where orderid=#{orderID}
 	</select>
-	<select id="findOrderlistByListID" parameterType="int" resultType="com.slsd.entity.Orderlist">
+	<select id="findByUsername" parameterType="String"
+		resultType="com.slsd.entity.Order">
 		select
-		*from orderlist where ListID=#{listID}
+		*from orders where username=#{username}
 	</select>
-	<insert id="addOrderlist" useGeneratedKeys="true" parameterType="com.slsd.entity.Orderlist">
-		insert
-		 orderlist (listId,number,flower,price)
-		values(#{listID},#{number},#{flower},#{price})
-	</insert>
-	<update id="editOrderlist" parameterType="com.slsd.entity.Orderlist">
-		update Orderlist set
-		number=#{number},price=#{price} where lid=#{lid}
+	<update id="editOrder" parameterType="com.slsd.entity.Order">
+		update orders set
+		listid=#{listID} , price =#{price} where orderid=#{orderID}
 	</update>
-	<delete id="delOrderlistBylid" parameterType="int">
-		delete from orderlist where
-		lid=#{lid}
+	<insert id="addOrder" useGeneratedKeys="true" parameterType="com.slsd.entity.Order">
+		insert
+		into orders (time,listid,price,username)
+		values(#{time},#{listID},#{price},#{username})
+	</insert>
+
+	<delete id="delOrder" parameterType="int">
+		delete from orders where
+		orderId=#{orderID}
 	</delete>
-	<delete id="delOrderlistBylistID" parameterType="int">
-		delete from orderlist where
-		listID = #{listID}
-	</delete>
-</mapper>
+
+</mapper> 
