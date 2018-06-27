@@ -117,10 +117,10 @@ public class FlowerController {
 		return "shoppingC";
 	}
 	
-	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
-	public String  addOrder(HttpServletRequest request, Model model) {
-		String a = request.getParameter("checkall");
-		System.out.println(a);
-		return "index";
-	}
+//	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
+//	public String  addOrder(HttpServletRequest request, Model model) {
+//		String a = request.getParameter("checkall");
+//		System.out.println(a);
+//		return "index";
+//	}
 }
