@@ -10,12 +10,21 @@ import com.slsd.dao.OrderDao;
 import com.slsd.entity.Order;
 import com.slsd.service.OrderService;
 
+/**
+* @ClassName: OrderServiceImpl
+* @Description:TODO(订单功能实现)
+* @author: 陈先总
+* @date: 2018年6月24日 上午9:09:13
+*
+* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+*/
 @Service("orderService")
 public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	@Qualifier("orderDao")
 	private OrderDao orderDao;
+	
 	public boolean addOrder(Order order) {
 		// TODO Auto-generated method stub
 		return orderDao.addOrder(order);

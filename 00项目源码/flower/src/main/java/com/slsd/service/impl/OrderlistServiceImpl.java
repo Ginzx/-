@@ -10,12 +10,21 @@ import com.slsd.dao.OrderlistDao;
 import com.slsd.entity.Orderlist;
 import com.slsd.service.OrderlistService;
 
+/**
+* @ClassName: OrderlistServiceImpl
+* @Description:TODO(订单清单功能实现)
+* @author: 陈先总
+* @date: 2018年6月24日 上午9:08:37
+*
+* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+*/
 @Service("orderlistService")
 public class OrderlistServiceImpl implements OrderlistService {
 
 	@Autowired
 	@Qualifier("orderlistDao")
 	private OrderlistDao orderlistDao;
+
 	
 	public boolean addOrderlist(Orderlist orderlist) {
 		// TODO Auto-generated method stub
