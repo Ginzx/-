@@ -12,6 +12,14 @@ import org.springframework.stereotype.Repository;
 import com.slsd.dao.OrderDao;
 import com.slsd.entity.Order;
 
+/**
+* @ClassName: OrderDaoImpl
+* @Description:TODO(订单实现类)
+* @author: 陈先总
+* @date: 2018年6月24日 上午8:52:05
+*
+* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
+*/
 @Repository
 public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
 
@@ -26,7 +34,6 @@ public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
 		int row = sqlSession.insert("addOrder", order);
 		return row!=0 ? true:false;
 	}
-
 	public boolean delOrder(int orderID) {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.delete("delOrder", orderID);

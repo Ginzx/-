@@ -1,13 +1,3 @@
-/**
-* All rights Reserved, Designed By www.ncetc.chinasofti.com
-* @Title: OrderlistDaoImpl.java
-* @Package com.slsd.dao.impl
-* @Description: TODO(用一句话描述该文件做什么)
-* @author: Administrator
-* @date: 2018年6月24日 下午2:50:52
-* @version V1.0
-* @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
-*/
 package com.slsd.dao.impl;
 
 import java.util.List;
@@ -24,8 +14,8 @@ import com.slsd.entity.Orderlist;
 
 /**
 * @ClassName: OrderlistDaoImpl
-* @Description:TODO(这里用一句话描述这个类的作用)
-* @author: Administrator
+* @Description:TODO(订单清单实现类)
+* @author: 陈先总
 * @date: 2018年6月24日 下午2:50:52
 *
 * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.

@@ -8,7 +8,7 @@ import com.slsd.entity.Order;
  * 
 * @ClassName: OrderDao
 * @Description:TODO(订单)
-* @author: Administrator
+* @author:陈先总
 * @date: 2018年6月24日 下午3:57:21
 *
 * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
@@ -80,3 +80,4 @@ public interface OrderDao {
 	 */
 	public Order findByOrderid(int orderid);
 }
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slsd.dao.OrderlistDao">
+	<select id="findAllOrderlist" resultType="com.slsd.entity.Orderlist">
+		select * from orderlist order by
+		listid
+	</select>
+	<select id="findOrderlistByLid" parameterType="int" resultType="com.slsd.entity.Orderlist">
+		select
+		*from orderlist where lid=#{lid}
+	</select>
+	<select id="findOrderlistByListID" parameterType="int" resultType="com.slsd.entity.Orderlist">
+		select
+		*from orderlist where ListID=#{listID}
+	</select>
+	<insert id="addOrderlist" useGeneratedKeys="true" parameterType="com.slsd.entity.Orderlist">
+		insert
+		 orderlist (listId,number,flower,price)
+		values(#{listID},#{number},#{flower},#{price})
+	</insert>
+	<update id="editOrderlist" parameterType="com.slsd.entity.Orderlist">
+		update Orderlist set
+		number=#{number},price=#{price} where lid=#{lid}
+	</update>
+	<delete id="delOrderlistBylid" parameterType="int">
+		delete from orderlist where
+		lid=#{lid}
+	</delete>
+	<delete id="delOrderlistBylistID" parameterType="int">
+		delete from orderlist where
+		listID = #{listID}
+	</delete>
+</mapper>
