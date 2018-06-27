@@ -77,14 +77,14 @@
 							店铺：<a href="javascript:;">花语</a>
 						</div>
 					</div>
-					<form action="addOrder" method="">
+					<form action="addOrder" method="post">
 						<div class="order_content">
 							<c:forEach var="orderl" items="${ollist }">
 
 								<ul class="order_lists">
 									<li class="list_chk"><input type="checkbox"
 										id="checkbox_'${ orderl.ID}'" class="son_check"
-										name="checkall'" value="${orderl.ID }"> <label
+										name="checkall" value="${orderl.ID }"> <label
 										for="checkbox_'${ orderl.ID}'"></label></li>
 									<li class="list_con">
 										<div class="list_img">
@@ -110,7 +110,7 @@
 										<div class="amount_box">
 											<a href="javascript:;" class="reduce reSty">-</a> <input
 												type="text" value="${orderl.number }"
-												name="number_'${ orderl.ID}'" class="sum"> <a
+												name="number_'${orderl.ID}'" class="sum"> <a
 												href="javascript:;" class="plus">+</a>
 										</div>
 									</li>
@@ -141,11 +141,10 @@
 							已选商品<strong class="piece_num">0</strong>件
 						</div>
 						<div class="totalMoney">
-							共计: <strong class="total_text">0.00</strong>
+							共计: <strong class="total_text" >0.00</strong>
 						</div>
 						<div class="calBtn">
-							<input type="submit" value="结算">
-							<!-- <a href="javascript:;">结算</a> -->
+							<input type="submit" value="结算" style="width:80px; height:50px;">
 						</div>
 					</div>
 				</div>
