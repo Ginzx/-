@@ -114,8 +114,13 @@ public class FlowerController {
 				olist.remove(i);
 			}
 		}
-	
 		return "shoppingC";
-		
+	}
+	
+	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
+	public String  addOrder(HttpServletRequest request, Model model) {
+		String a = request.getParameter("checkall");
+		System.out.println(a);
+		return "index";
 	}
 }
