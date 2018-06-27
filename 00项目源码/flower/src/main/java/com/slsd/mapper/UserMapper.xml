@@ -10,7 +10,7 @@
 	</insert>
 	<update id="editUser" parameterType="com.slsd.entity.User">
 		update User set
-		userpwd=#{userpwd},address=#{address},phone=#{phone},sex=#{sex},name=#{name},photo=#{photo} where username=#{username}
+		userpwd=#{userpwd},address=#{address},phone=#{phone},sex=#{sex},name=#{name},photo=#{photo},introduction=#{introduction} where username=#{username}
 	</update>
 	<delete id="delUser"  parameterType="com.slsd.entity.User">
 		delete from User where

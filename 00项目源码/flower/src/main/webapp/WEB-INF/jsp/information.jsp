@@ -89,8 +89,8 @@
 						</tr>
 						<tr>
 							<td>个人简介</td>
-							<td><textarea value="${user.introduction }" rows="5"
-									cols="70" name="introduction" style="margin-left: 50px;"></textarea></td>
+							<td><textarea  rows="5"
+									cols="70" name="introduction" style="margin-left: 50px;">${user.introduction }</textarea></td>
 						</tr>
 						<tr>
 							<td></td>
