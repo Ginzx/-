@@ -7,14 +7,13 @@ import com.slsd.entity.Order;
 /**
  * 
 * @ClassName: OrderService
-* @Description:TODO(这里用一句话描述这个类的作用)
-* @author: Administrator
+* @Description:TODO(订单方法)
+* @author: 陈先总
 * @date: 2018年6月24日 下午4:32:43
 *
 * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
  */
 public interface OrderService {
-
 	
 	public boolean addOrder(Order order);
 	

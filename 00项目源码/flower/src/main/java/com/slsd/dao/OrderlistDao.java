@@ -8,7 +8,7 @@ import com.slsd.entity.Orderlist;
  * 
 * @ClassName: Orderlist
 * @Description:TODO(清单接口)
-* @author: 邹博
+* @author: 陈先总
 * @date: 2018年6月24日 下午2:32:13
 *
 * @Copyright: 2018 www.ncetc.chinasofti.com Inc. All rights reserved.
