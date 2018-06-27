@@ -34,7 +34,7 @@
 			<ul id="m-top-1">
 				<li><a href="#"><span class="glyphicon glyphicon-search"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"
+				<li><a href="userin"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
 				<li><a href="#"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
@@ -74,7 +74,7 @@
 					<div class="shop_info">
 
 						<div class="shop_name">
-							店铺：<a href="javascript:;">花语</a>
+							店铺：<a href="index">花语</a>
 						</div>
 					</div>
 					<form action="addOrder" method="post">
@@ -85,7 +85,7 @@
 									<li class="list_chk"><input type="checkbox"
 										id="checkbox_'${ orderl.ID}'" class="son_check"
 										name="checkall" value="${orderl.ID }"> <label
-										for="checkbox_'${ orderl.ID}'"></label></li>
+										for="checkbox_'${orderl.ID}'"></label></li>
 									<li class="list_con">
 										<div class="list_img">
 											<input type="hidden" name="picture_'${ orderl.ID}'"
@@ -94,7 +94,7 @@
 										</div>
 										<div class="list_text">
 											<input type="hidden" name="flower_'${ orderl.ID}'"
-												value="${orderl.flower }" /><a href="javascript:;">${orderl.flower }</a>
+												value="${orderl.flower }" /><a href="shop?id=${orderl.ID }">${orderl.flower }</a>
 										</div>
 									</li>
 									<li class="list_info">
