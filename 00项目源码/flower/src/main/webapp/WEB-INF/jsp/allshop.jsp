@@ -78,6 +78,7 @@
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
 		<div>${err2 }</div>
+		<div>${suc }</div>
 	</div>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

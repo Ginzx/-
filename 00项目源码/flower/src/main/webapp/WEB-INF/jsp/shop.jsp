@@ -78,7 +78,7 @@
 						aria-hidden="true"></span></a></li>
 				<li><a href="userin"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span
+				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
 			</ul>
@@ -215,13 +215,23 @@
 						<tr>
 							<td><h4>用户评论</h4></td>
 						</tr>
+						<c:forEach var="ct" items="${clist }">
+							<tr>
+								<td>${ct.comment }</td>
+								<td>${ct.user }</td>
+							</tr>
+						</c:forEach>
+						<form action="addComment?cid=${flower.commentID }" method="post">
 						<tr>
-							<td><textarea rows="5" cols="120"></textarea></td>
+							<td>
+							
+							<textarea rows="5" cols="120" name="content"></textarea></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="提交评论"
 								style="margin-left: 600px; width: 100px; height: 40px;"></td>
 						</tr>
+						</form>
 					</table>
 				</div>
 			</div>
