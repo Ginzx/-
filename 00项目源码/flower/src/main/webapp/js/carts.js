@@ -130,11 +130,11 @@ $(function () {
         $all_sum = $('.sum');
     $plus.click(function () {
         var $inputVal = $(this).prev('input'),
-            $count = parseInt($inputVal.val())+1,
+            $count = parseFloat($inputVal.val())+1,
             $obj = $(this).parents('.amount_box').find('.reduce'),
             $priceTotalObj = $(this).parents('.order_lists').find('.sum_price'),
             $price = $(this).parents('.order_lists').find('.price').html(),  //单价
-            $priceTotal = $count*parseInt($price.substring(1));
+            $priceTotal = $count*parseFloat($price.substring(1));
         $inputVal.val($count);
         $priceTotalObj.html('￥'+$priceTotal);
         if($inputVal.val()>1 && $obj.hasClass('reSty')){
@@ -145,10 +145,10 @@ $(function () {
 
     $reduce.click(function () {
         var $inputVal = $(this).next('input'),
-            $count = parseInt($inputVal.val())-1,
+            $count = parseFloat($inputVal.val())-1,
             $priceTotalObj = $(this).parents('.order_lists').find('.sum_price'),
             $price = $(this).parents('.order_lists').find('.price').html(),  //单价
-            $priceTotal = $count*parseInt($price.substring(1));
+            $priceTotal = $count*parseFloat($price.substring(1));
         if($inputVal.val()>1){
             $inputVal.val($count);
             $priceTotalObj.html('￥'+$priceTotal);
@@ -169,7 +169,7 @@ $(function () {
         }
         $(this).val($(this).val().replace(/\D|^0/g,''));
         $count = $(this).val();
-        $priceTotal = $count*parseInt($price.substring(1));
+        $priceTotal = $count*parseFloat($price.substring(1));
         $(this).attr('value',$count);
         $priceTotalObj.html('￥'+$priceTotal);
         totalMoney();
@@ -216,8 +216,8 @@ $(function () {
         var calBtn = $('.calBtn a');
         $sonCheckBox.each(function () {
             if ($(this).is(':checked')) {
-                var goods = parseInt($(this).parents('.order_lists').find('.sum_price').html().substring(1));
-                var num =  parseInt($(this).parents('.order_lists').find('.sum').val());
+                var goods = parseFloat($(this).parents('.order_lists').find('.sum_price').html().substring(1));
+                var num =  parseFloat($(this).parents('.order_lists').find('.sum').val());
                 total_money += goods;
                 total_count += num;
             }

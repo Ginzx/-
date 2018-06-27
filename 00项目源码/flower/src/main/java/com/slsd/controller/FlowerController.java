@@ -38,7 +38,7 @@ public class FlowerController {
 	private OrderlistService orlService;
 	
 	List<OrderlistFlower> olist = new ArrayList<OrderlistFlower>();
-	int lidinc = 5;
+	
 	
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String cart(HttpServletRequest request, Model model) {
@@ -133,6 +133,10 @@ public class FlowerController {
 	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
 	public String  addOrder(HttpServletRequest request, Model model) {
 		String[] a = request.getParameterValues("checkall");
+		
+		List<Order> orlist= oService.findAll();
+		
+		int lidinc = orlist.get(orlist.size()-1).getListID()+1;
 		
 		User users = (User) request.getSession().getAttribute("user");
 		
