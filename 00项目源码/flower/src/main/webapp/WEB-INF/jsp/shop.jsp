@@ -224,7 +224,7 @@
 						<form action="addComment?cid=${flower.commentID }" method="post">
 						<tr>
 							<td>
-							
+							<input type="hidden" name="cidt" value="${flower.ID }"/>
 							<textarea rows="5" cols="120" name="content"></textarea></td>
 						</tr>
 						<tr>
@@ -240,6 +240,8 @@
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
 		<div>${err2 }</div>
+		
+		<div>${suc }</div>
 	</div>
 	<script type="text/javascript" src="js/magnifier.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
