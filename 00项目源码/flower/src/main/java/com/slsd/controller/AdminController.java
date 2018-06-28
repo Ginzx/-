@@ -24,6 +24,13 @@ import com.slsd.service.AdminService;
 import com.slsd.service.FlowerService;
 import com.slsd.service.UserService;
 
+/**
+ * @ClassName: AdminController
+ * @Description:管理员功能的实现
+ * @author: 王启明
+ * @date: 2018年6月28日 下午3:10:26
+ *
+ */
 @Controller
 public class AdminController {
 
@@ -36,6 +43,10 @@ public class AdminController {
 	@Resource
 	private AdminService adminService;
 
+	/**
+	 * @Title: edit @Description: 修改商品信息 @param: @param
+	 *         request @param: @return @return: String @throws
+	 */
 	@RequestMapping(value = "/editflower", method = RequestMethod.POST)
 	public String edit(HttpServletRequest request) {
 
@@ -62,10 +73,14 @@ public class AdminController {
 		session.setAttribute("orders", adminorders);
 		session.setAttribute("flowers", flowers);
 		session.setAttribute("users", users1);
-		// 如果是管理员账号则进入管理员界面
 		return "admin";
 	}
 
+	/**
+	 * @Title: addFlower @Description: 添加商品信息 @param: @param request @param: @param
+	 *         pictureFile @param: @return @param: @throws Exception @return:
+	 *         String @throws
+	 */
 	@RequestMapping(value = "/addflower", method = RequestMethod.POST)
 	public String addFlower(HttpServletRequest request, MultipartFile pictureFile) throws Exception {
 		request.setCharacterEncoding("UTF-8");
@@ -91,7 +106,6 @@ public class AdminController {
 		fl.setType(type);
 
 		boolean flag = flowerService.addFlower(fl);
-
 		List<AdminOrder> adminorders = adminService.findorder();
 		// 查询所有用户信息
 		List<User> users1 = userService.getAll();
@@ -101,17 +115,21 @@ public class AdminController {
 		session.setAttribute("orders", adminorders);
 		session.setAttribute("flowers", flowers);
 		session.setAttribute("users", users1);
-		// 如果是管理员账号则进入管理员界面
 		return "admin";
 	}
 
+	/**
+	 * @Title: del @Description: 删除商品功能 @param: @param request @param: @param
+	 *         id @param: @return @param: @throws IOException @return:
+	 *         String @throws
+	 */
 	@RequestMapping(value = "/delflower", method = RequestMethod.GET)
 	public String del(HttpServletRequest request, @RequestParam("id") String id) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession(true);
-		
-		int id1=Integer.parseInt(id);
-		boolean flag=flowerService.delFlower(id1);
+
+		int id1 = Integer.parseInt(id);
+		boolean flag = flowerService.delFlower(id1);
 
 		List<AdminOrder> adminorders = adminService.findorder();
 		// 查询所有用户信息
@@ -122,7 +140,6 @@ public class AdminController {
 		session.setAttribute("orders", adminorders);
 		session.setAttribute("flowers", flowers);
 		session.setAttribute("users", users1);
-		// 如果是管理员账号则进入管理员界面
 
 		return "admin";
 	}

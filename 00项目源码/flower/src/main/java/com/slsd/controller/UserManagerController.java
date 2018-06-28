@@ -31,7 +31,7 @@ public class UserManagerController {
 
 	/**
 	 * @Title: userin @Description: 跳转到个人信息界面 @param: @return @return:
-	 * String @throws
+	 *         String @throws
 	 */
 	@RequestMapping(value = "userin", method = RequestMethod.GET)
 	public String userin() {
@@ -40,7 +40,8 @@ public class UserManagerController {
 
 	/**
 	 * @Title: addUser @Description: 修改用户信息 @param: @param request @param: @param
-	 * pictureFile @param: @return @param: @throws Exception @return: String @throws
+	 *         pictureFile @param: @return @param: @throws Exception @return:
+	 *         String @throws
 	 */
 	@RequestMapping(value = "/editUser")
 	public String addUser(HttpServletRequest request, MultipartFile pictureFile) throws Exception {
