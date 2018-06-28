@@ -97,6 +97,10 @@
 							style="width: 50px; height: 30px;"></td>
 						<td width="100px"></td>
 					</tr>
+					<tr>
+						<td colspan="3" align ="center"><a href="loginin">返回</a></td>
+					</tr>
+					<tr>
 					<td colspan="2" id="center-login-1">
 						<div class="center-login-down">
 							<p>用户注册/登录说明</p>

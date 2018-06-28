@@ -51,8 +51,17 @@ public class FlowerController {
 		return "shoppingC";
 	}
 	
-
+	@RequestMapping(value = "/forpay", method = RequestMethod.GET)
+	public String forpay(HttpServletRequest request, Model model) {
+		
+		return "forpay";
+	}
 	
+	@RequestMapping(value = "/intro", method = RequestMethod.GET)
+	public String intro(HttpServletRequest request, Model model) {
+		
+		return "introduce";
+	}
 	
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
@@ -85,8 +94,10 @@ public class FlowerController {
 		ct.setUser(users.getUsername());
 		comService.add(ct);
 		model.addAttribute("ct", "<script>alert('评论发表成功')</script>");  
-		int ID = Integer.parseInt(request.getParameter("cidt"));
-		Flower f = flowerService.findbyid(ID);
+		
+		Flower f = flowerService.findbyid(cID);
+		f.setCommentID(cID);
+		flowerService.editFlower(f);
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
 		model.addAttribute("allFlower1", flist1);
@@ -153,6 +164,24 @@ public class FlowerController {
 			}
 		}
 		return "shoppingC";
+	}
+	
+	@RequestMapping(value = "/del2", method = RequestMethod.GET)
+	public String del2(@RequestParam("id") String id, Model model) {
+		int ID = Integer.parseInt(id);
+		for(int i =0;i<olist.size();i++) {
+			if(olist.get(i).getID()==ID) {
+				olist.remove(i);
+			}
+		}
+		
+		Flower f = flowerService.findbyid(ID);
+		model.addAttribute("flower", f);
+		List<Flower> flist1 = flowerService.findAll();
+		model.addAttribute("allFlower1", flist1);
+		List<Comment> clist = comService.findbyflower(f.getCommentID());
+		model.addAttribute("clist", clist);
+		return "shop";
 	}
 	
 	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)

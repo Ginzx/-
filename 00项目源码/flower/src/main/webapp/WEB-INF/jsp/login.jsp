@@ -26,11 +26,11 @@
 				<li>欢迎访问花语在线商城！</li>
 			</ul>
 			<ul id="m-top-1">
-				<li><a href="#"><span class="glyphicon glyphicon-search"
+				<li><a href="javascript:;"><span class="glyphicon glyphicon-search"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"
+				<li><a href="javascript:;"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span
+				<li><a href="javascript:;"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
 			</ul>
@@ -39,10 +39,10 @@
 			<img src="img/sign.png"
 				style="width: 90px; height: 90px; margin-left: 755px; margin-top: 55px;" />
 			<ul>
-				<li><a href="#">商城首页</a></li>
-				<li><a href="#">所有商品</a></li>
-				<li><a href="#">支付方式</a></li>
-				<li><a href="#">关于花语</a></li>
+				<li><a href="javascript:;">商城首页</a></li>
+				<li><a href="javascript:;">所有商品</a></li>
+				<li><a href="javascript:;">支付方式</a></li>
+				<li><a href="javascript:;">关于花语</a></li>
 			</ul>
 		</div>
 		<div class="center">

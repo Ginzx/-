@@ -33,6 +33,9 @@
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
+				<li>
+					<a href="loginin"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+				</li>
 			</ul>
 		</div>
 		<div class="s-top">
@@ -41,8 +44,8 @@
 			<ul>
 				<li><a href="index">商城首页</a></li>
 				<li><a href="allshop">所有商品</a></li>
-				<li><a href="#">支付方式</a></li>
-				<li><a href="#">关于花语</a></li>
+				<li><a href="forpay">支付方式</a></li>
+				<li><a href="intro">关于花语</a></li>
 			</ul>
 		</div>
 		<div class="center1">
