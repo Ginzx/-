@@ -70,9 +70,9 @@
 				</p>
 			</div>
 			<div id="personInfor">
-				<p id="userName">邹博</p>
+				<p id="userName">管理员</p>
 				<p>
-					<a href="#">退出登录</a>
+					<a href="loginin">退出登录</a>
 				</p>
 			</div>
 			<div class="meun-title">查询功能</div>
@@ -240,7 +240,7 @@
 												<!-- /.modal-content -->
 											</div>
 											<!-- /.modal -->
-										</div> <a href="deltflower">
+										</div> <a href="delflower?id=${flower.ID}">
 											<button class="btn btn-danger btn-xs" data-toggle="modal"
 												data-target="#deleteChar"
 												style="width: 70px; height: 45px; font-size: 16px; margin-left: 20px;">删除</button>
