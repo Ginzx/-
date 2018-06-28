@@ -39,11 +39,11 @@ CREATE TABLE `comment` (
   `comment` varchar(255) DEFAULT NULL COMMENT '评论内容',
   `user` varchar(255) DEFAULT NULL COMMENT '用户名',
   PRIMARY KEY (`Cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 /*Data for the table `comment` */
 
-insert  into `comment`(`Cid`,`Commentid`,`comment`,`user`) values (1,1,'植物花卉01的评论','wqm01'),(2,1,'植物花卉01的评论（第二条）','cz02'),(3,2,'植物花卉02的评论','yc03'),(4,3,'植物花卉03的评论','yc03'),(5,4,'植物花卉04的评论','zb04');
+insert  into `comment`(`Cid`,`Commentid`,`comment`,`user`) values (1,1,'植物花卉01的评论','wqm01'),(2,1,'植物花卉01的评论（第二条）','cz02'),(3,2,'植物花卉02的评论','yc03'),(4,3,'植物花卉03的评论','yc03'),(5,4,'植物花卉04的评论','zb04'),(10,1,'qeq','wqm01'),(11,2,'234','wqm01'),(12,2,'1253za','wqm01'),(13,2,'666','wqm01'),(28,4,'435','cz02'),(29,2,'666666','yc03'),(30,3,'dge','yc03'),(31,6,'3456','yc03'),(32,3,'33','cz02');
 
 /*Table structure for table `flower` */
 
@@ -57,11 +57,11 @@ CREATE TABLE `flower` (
   `commentid` int(10) DEFAULT NULL COMMENT '评论编号',
   `picture` varchar(255) DEFAULT NULL COMMENT '图片',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `flower` */
 
-insert  into `flower`(`ID`,`name`,`price`,`type`,`commentid`,`picture`) values (1,'植物花卉01',10.00,'热门商品',1,NULL),(2,'植物花卉02',10.00,'热门商品',2,NULL),(3,'植物花卉03',20.00,'普通商品',3,NULL),(4,'植物花卉04',6.00,'热门商品',4,NULL),(6,'植物花卉05',17.00,'普通商品',2,NULL);
+insert  into `flower`(`ID`,`name`,`price`,`type`,`commentid`,`picture`) values (1,'植物花卉01',10.00,'热门商品',1,'img/flower1.png'),(2,'植物花卉02',10.00,'热门商品',2,'img/flower2.png'),(3,'植物花卉03',20.00,'普通商品',3,'img/flower3.png'),(4,'植物花卉04',6.00,'热门商品',4,'img/flower4.png'),(6,'植物花卉05',17.00,'普通商品',6,'img/flower5.png'),(7,'樱花',19.99,'热门',0,'img/fa1daf33c9da46b59916cfa1ef4c7ae4.jpg');
 
 /*Table structure for table `orderlist` */
 
@@ -74,11 +74,11 @@ CREATE TABLE `orderlist` (
   `flower` varchar(255) DEFAULT NULL COMMENT '花',
   `price` double(12,2) DEFAULT NULL COMMENT '价格',
   PRIMARY KEY (`lid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 /*Data for the table `orderlist` */
 
-insert  into `orderlist`(`listid`,`lid`,`number`,`flower`,`price`) values (1,1,4,'植物花卉01',40.00),(1,2,6,'植物花卉02',60.00),(2,3,10,'植物花卉01',100.00),(2,4,3,'植物花卉03',30.00);
+insert  into `orderlist`(`listid`,`lid`,`number`,`flower`,`price`) values (1,1,4,'植物花卉01',40.00),(1,2,6,'植物花卉02',60.00),(2,3,10,'植物花卉01',100.00),(2,4,3,'植物花卉03',30.00),(5,5,2,'植物花卉01',20.00),(6,6,2,'植物花卉01',20.00),(6,9,2,'植物花卉01',20.00),(6,10,1,'植物花卉03',20.00);
 
 /*Table structure for table `orders` */
 
@@ -91,11 +91,11 @@ CREATE TABLE `orders` (
   `price` double(12,2) DEFAULT NULL COMMENT '订单总价',
   `username` varchar(255) DEFAULT NULL COMMENT '订单所属人',
   PRIMARY KEY (`OrderId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 /*Data for the table `orders` */
 
-insert  into `orders`(`OrderId`,`time`,`listid`,`price`,`username`) values (1,'2018-06-21',1,100.00,'wqm01'),(2,'2018-05-21',2,200.00,'cz02'),(3,'2018-04-21',3,300.00,'yc03'),(5,'2018-06-24',3,666.00,'yc');
+insert  into `orders`(`OrderId`,`time`,`listid`,`price`,`username`) values (1,'2018-06-21',1,100.00,'wqm01'),(2,'2018-05-21',2,200.00,'cz02'),(3,'2018-04-21',3,300.00,'yc03'),(5,'2018-06-24',3,666.00,'yc'),(6,'2018-06-27',5,20.00,'wqm'),(7,'2018-06-27',6,60.00,'wqm'),(9,'2018-06-27',6,40.00,'wqm01');
 
 /*Table structure for table `user` */
 
