@@ -85,8 +85,10 @@ public class FlowerController {
 		ct.setUser(users.getUsername());
 		comService.add(ct);
 		model.addAttribute("ct", "<script>alert('评论发表成功')</script>");  
-		int ID = Integer.parseInt(request.getParameter("cidt"));
-		Flower f = flowerService.findbyid(ID);
+		
+		Flower f = flowerService.findbyid(cID);
+		f.setCommentID(cID);
+		flowerService.editFlower(f);
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
 		model.addAttribute("allFlower1", flist1);

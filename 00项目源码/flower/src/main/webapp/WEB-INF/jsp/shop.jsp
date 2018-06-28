@@ -228,7 +228,7 @@
 	发布评论
 </button>
 <!-- 模态框（Modal） -->
-<form action="addComment?cid=${flower.commentID }" method="post" id="addC">
+<form action="addComment?cid=${flower.ID }" method="post" id="addC">
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
