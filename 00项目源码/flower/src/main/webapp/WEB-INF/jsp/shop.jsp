@@ -82,9 +82,8 @@
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
-				<li>
-					<a href="loginin"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
-					</li>
+				<li><a href="loginin"><span class="glyphicon glyphicon-off"
+						aria-hidden="true"></span></a></li>
 			</ul>
 		</div>
 		<div class="s-top">
@@ -138,33 +137,39 @@
 					<table border="0" width="300px" height="300px"
 						id="center-mid-left-1">
 						<form action="addCart" method="post">
-						<tr>
-							<td >
-								<h3><span ><input type="hidden" name="flower" value="${flower.name }"/>${flower.name }</span>
-									<input type="hidden" name="picture" value="${flower.picture }"/>
-								</h3>
-							</td>
-						</tr>
-						<tr>
-							<td>单价:<span id="center-mid-left-3"  ><input type="hidden" name="price" value="${flower.price }"/>¥${flower.price }</span></td>
-						</tr>
-						<tr>
-							<td>
-								<div id="center-mid-left-4" name="lid" ><input type="hidden" name="ID" value="${flower.ID }"/>商品编号${flower.ID }</div>
+							<tr>
+								<td>
+									<h3>
+										<span><input type="hidden" name="flower"
+											value="${flower.name }" />${flower.name }</span> <input
+											type="hidden" name="picture" value="${flower.picture }" />
+									</h3>
+								</td>
+							</tr>
+							<tr>
+								<td>单价:<span id="center-mid-left-3"><input
+										type="hidden" name="price" value="${flower.price }" />¥${flower.price }</span></td>
+							</tr>
+							<tr>
+								<td>
+									<div id="center-mid-left-4" name="lid">
+										<input type="hidden" name="ID" value="${flower.ID }" />商品编号${flower.ID }
+									</div>
 
-							</td>
-						</tr>
-						<tr>
-							<td>分类：<span id="center-mid-left-2" ><input type="hidden" name="type" value="${flower.type }"/>${flower.type }</span></td>
-						</tr>
-						<tr>
-							<td><input type="submit" value="加入购物车" 
-								style="background: whitesmoke; width: 120px; height: 40px; margin-left: 15px;">
-								<div class="gw_num">
-									<em class="jian">-</em> <input type="text" value="1"
-										class="num" name="number"  /> <em class="add">+</em>
-								</div></td>
-						</tr>
+								</td>
+							</tr>
+							<tr>
+								<td>分类：<span id="center-mid-left-2"><input
+										type="hidden" name="type" value="${flower.type }" />${flower.type }</span></td>
+							</tr>
+							<tr>
+								<td><input type="submit" value="加入购物车"
+									style="background: whitesmoke; width: 120px; height: 40px; margin-left: 15px;">
+									<div class="gw_num">
+										<em class="jian">-</em> <input type="text" value="1"
+											class="num" name="number" /> <em class="add">+</em>
+									</div></td>
+							</tr>
 						</form>
 					</table>
 				</div>
@@ -200,16 +205,21 @@
 							<tr>
 								<td colspan="2">相关推荐 HOT SALE</td>
 							</tr>
-							<c:forEach var="fl1" items="${allFlower1 }" step="1" end="8" begin="0" varStatus="fll1">
-								<c:if test="${fll1.index %2==0 }"><tr></c:if>
-									<td>
-										<a href="shop?id=${fl1.ID }"><img src="${fl1.picture }"
-										width="100px" height="100px" style="margin-left: 35px;"></a>
-									</td>
-								<c:if test="${fll1.index %2==1 }"></tr></c:if>
+							<c:forEach var="fl1" items="${allFlower1 }" step="1" end="8"
+								begin="0" varStatus="fll1">
+								<c:if test="${fll1.index %2==0 }">
+									<tr>
+								</c:if>
+								<td><a href="shop?id=${fl1.ID }"><img
+										src="${fl1.picture }" width="100px" height="100px"
+										style="margin-left: 35px;"></a>
+									<p align="center">${fl1.name }</p></td>
+								<c:if test="${fll1.index %2==1 }">
+									</tr>
+								</c:if>
 							</c:forEach>
-							
-							
+
+
 						</table>
 					</div>
 				</div>
@@ -225,41 +235,40 @@
 								<td>${ct.user }</td>
 							</tr>
 						</c:forEach>
-						
-						
+
+
 						<tr>
-							<td><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	发布评论
-</button>
-<!-- 模态框（Modal） -->
-<form action="addComment?cid=${flower.ID }" method="post" id="addC">
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<input type="hidden" name="cidt" value="${flower.ID }"/>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >
-					&times;
-				</button>
-				<h4 class="modal-title" id="myModalLabel">
-					请发布你的评论
-				</h4>
-			</div>
-			<div class="modal-body">
-				<textarea rows="5" cols="80" name="content"></textarea>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-				</button>
-				<button type="submit" class="btn btn-primary" value="submit" form="addC">
-					提交更改
-				</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div></td>
+							<td><button class="btn btn-primary btn-lg"
+									data-toggle="modal" data-target="#myModal">发布评论</button> <!-- 模态框（Modal） -->
+								<form action="addComment?cid=${flower.ID }" method="post"
+									id="addC">
+									<div class="modal fade" id="myModal" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<input type="hidden" name="cidt" value="${flower.ID }" />
+													<button type="button" class="close" data-dismiss="modal"
+														aria-hidden="true">&times;</button>
+													<h4 class="modal-title" id="myModalLabel">请发布你的评论</h4>
+												</div>
+												<div class="modal-body">
+													<textarea rows="5" cols="80" name="content"></textarea>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default"
+														data-dismiss="modal">关闭</button>
+													<button type="submit" class="btn btn-primary"
+														value="submit" form="addC">提交更改</button>
+												</div>
+											</div>
+											<!-- /.modal-content -->
+										</div>
+										<!-- /.modal -->
+									</div></td>
 						</tr>
-						 </form> 
+						</form>
 					</table>
 				</div>
 			</div>
@@ -268,83 +277,89 @@
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
 		<div>${err2 }</div>
-		
-		<div>${suc }</div>
+
+
 	</div>
-	
+
 	<div class="J-global-toolbar">
-			<div class="toolbar-wrap J-wrap">
-				<div class="toolbar">
-					<div class="toolbar-panels J-panel">
-						<div style="visibility: hidden;" class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
-							<h3 class="tbar-panel-header J-panel-header">
-						<a href="" class="title"><i></i><em class="title">购物车</em></a>
-						<span class="close-panel J-close"></span>
-					</h3>
-							<div class="tbar-panel-main">
-								<div class="tbar-panel-content J-panel-content">
-									
-									<div id="J-cart-render">
-										<div class="tbar-cart-list">
+		<div class="toolbar-wrap J-wrap">
+			<div class="toolbar">
+				<div class="toolbar-panels J-panel">
+					<div style="visibility: hidden;"
+						class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
+						<h3 class="tbar-panel-header J-panel-header">
+							<a href="" class="title"><i></i><em class="title">购物车</em></a> <span
+								class="close-panel J-close"></span>
+						</h3>
+						<div class="tbar-panel-main">
+							<div class="tbar-panel-content J-panel-content">
+
+								<div id="J-cart-render">
+									<div class="tbar-cart-list">
 										<c:forEach var="ol2" items="${ollist }">
 											<div class="tbar-cart-item">
-												
+
 												<div class="jtc-item-goods">
-													<span class="p-img"><a href="#" target="_blank"><img src="${ol2.picture }" height="50" width="50" /></a></span>
+													<span class="p-img"><a href="#" target="_blank"><img
+															src="${ol2.picture }" height="50" width="50" /></a></span>
 													<div class="p-name">
 														<a href="#">${ol2.flower }</a>
 													</div>
-													<div class="p-price"><strong>${ol2.price }</strong>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：${ol2.number } </div>
+													<div class="p-price">
+														<strong>${ol2.price }</strong>&nbsp;
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：${ol2.number }
+													</div>
 													<a href="del2?id=${ol2.ID }" class="p-del J-del">删除</a>
 												</div>
 											</div>
-										</c:forEach>	
-									
-										</div>
+										</c:forEach>
+
 									</div>
 								</div>
 							</div>
-							<div class="tbar-panel-footer J-panel-footer">
-								<div class="tbar-checkout">
-									
-									<a class="jtc-btn J-btn" href="cart" >去购物车结算</a>
-								</div>
+						</div>
+						<div class="tbar-panel-footer J-panel-footer">
+							<div class="tbar-checkout">
+
+								<a class="jtc-btn J-btn" href="cart">去购物车结算</a>
 							</div>
 						</div>
-
-						
-
-						
 					</div>
 
-					<div class="toolbar-header"></div>
 
-					<div class="toolbar-tabs J-tab">
-						<div class="toolbar-tab tbar-tab-cart">
-							<i class="tab-ico"></i>
-							<em class="tab-text ">购物车</em>
-							<span class="tab-sub J-count ">1</span>
-						</div>
-						
-					
-					</div>
 
-					<div class="toolbar-footer">
-						<div class="toolbar-tab tbar-tab-top">
-							<a href="#"> <i class="tab-ico  "></i> <em class="footer-tab-text">顶部</em> </a>
-						</div>
-					</div>
-
-					<div class="toolbar-mini"></div>
 
 				</div>
 
-				<div id="J-toolbar-load-hook"></div>
+				<div class="toolbar-header"></div>
+
+				<div class="toolbar-tabs J-tab">
+					<div class="toolbar-tab tbar-tab-cart">
+						<i class="tab-ico"></i> <em class="tab-text ">购物车</em> <span
+							class="tab-sub J-count ">${len }</span>
+					</div>
+
+
+				</div>
+
+				<div class="toolbar-footer">
+					<div class="toolbar-tab tbar-tab-top">
+						<a href="#"> <i class="tab-ico  "></i> <em
+							class="footer-tab-text">顶部</em>
+						</a>
+					</div>
+				</div>
+
+				<div class="toolbar-mini"></div>
 
 			</div>
+
+			<div id="J-toolbar-load-hook"></div>
+
 		</div>
+	</div>
 	<script type="text/javascript" src='js/nav.js'></script>
-	
+
 	<script type="text/javascript" src="js/magnifier.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

@@ -39,9 +39,8 @@
 				<li><a href="#"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
-				<li>
-					<a href="loginin"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
-				</li>
+				<li><a href="loginin"><span class="glyphicon glyphicon-off"
+						aria-hidden="true"></span></a></li>
 			</ul>
 		</div>
 		<div class="s-top">
@@ -144,10 +143,11 @@
 							已选商品<strong class="piece_num">0</strong>件
 						</div>
 						<div class="totalMoney">
-							共计: <strong class="total_text" >0.00</strong>
+							共计: <strong class="total_text">0.00</strong>
 						</div>
 						<div class="calBtn">
-							<input type="submit" value="结算" style="width:80px; height:50px;">
+							<input type="submit" value="结算"
+								style="width: 80px; height: 50px;">
 						</div>
 					</div>
 				</div>

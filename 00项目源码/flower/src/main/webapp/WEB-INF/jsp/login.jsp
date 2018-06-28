@@ -26,10 +26,10 @@
 				<li>欢迎访问花语在线商城！</li>
 			</ul>
 			<ul id="m-top-1">
-				<li><a href="javascript:;"><span class="glyphicon glyphicon-search"
-						aria-hidden="true"></span></a></li>
-				<li><a href="javascript:;"><span class="glyphicon glyphicon-user"
-						aria-hidden="true"></span></a></li>
+				<li><a href="javascript:;"><span
+						class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+				<li><a href="javascript:;"><span
+						class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
 				<li><a href="javascript:;"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
@@ -60,17 +60,18 @@
 					</tr>
 					<tr height="80px">
 						<td></td>
-						<td><a><input type="submit" value="登录" style="color:black;"></a>
-						<a href="registerin"><input type="button" value="注册" style="color:black;"></a></td>
+						<td><a><input type="submit" value="登录"
+								style="color: black;"></a> <a href="registerin"><input
+								type="button" value="注册" style="color: black;"></a></td>
 					</tr>
 					<tr height="80px">
 						<td></td>
-						<td><a href="forgetin">忘记密码？点击这里找回</a></td>
+						<td><a href="forgetin">忘记密码？</a></td>
 					</tr>
 					<tr>
 						<td colspan="2" id="center-login-1">
 							<div class="center-login-down">
-								<p>用户注册/登录说明 </p>
+								<p>用户注册/登录说明</p>
 								<p>1、实际使用之前，需配置用户管理组件中的相关邮件。详情请参考教程：《用户管理中相关邮件的配置》</p>
 								<p>2、新用户注册后的审核方式有三种：自动核准、邮件激活、需要管理员批准（即人工审核），详情可参考教程《如何设置用户注册后的审核方式》</p>
 							</div>
@@ -84,7 +85,8 @@
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
 	</div>
-	 ${msg }</br>  
+	${msg }
+	</br>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 </body>

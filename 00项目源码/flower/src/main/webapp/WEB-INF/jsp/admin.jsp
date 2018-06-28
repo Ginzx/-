@@ -266,7 +266,8 @@
 								</div>
 								<div class="modal-body">
 									<div class="container-fluid">
-										<form class="form-horizontal" action="addflower" method="post" enctype="multipart/form-data">
+										<form class="form-horizontal" action="addflower" method="post"
+											enctype="multipart/form-data">
 											<div class="form-group">
 												<label for="sLink" class="col-xs-3 control-label">植物姓名：</label>
 												<div class="col-xs-8 ">

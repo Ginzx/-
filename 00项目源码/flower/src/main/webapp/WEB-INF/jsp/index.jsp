@@ -15,6 +15,8 @@
 <title>花语丨首页</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
+<script src="js/jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" href="css/shoppingCart.css" type="text/css">
 </head>
 
 <body>
@@ -33,9 +35,8 @@
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
-				<li>
-					<a href="loginin"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
-				</li>
+				<li><a href="loginin"><span class="glyphicon glyphicon-off"
+						aria-hidden="true"></span></a></li>
 			</ul>
 		</div>
 		<div class="s-top">
@@ -118,12 +119,87 @@
 			<div class="down">
 				<img src="img/down.png" style="width: 1600px; height: 700px;" />
 			</div>
-			<div>
-				${suc2 }
-			</div>
+			<div>${suc2 }</div>
 		</div>
 	</div>
 	</div>
+	<div class="toolbar-wrap J-wrap">
+		<div class="toolbar">
+			<div class="toolbar-panels J-panel">
+				<div style="visibility: hidden;"
+					class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
+					<h3 class="tbar-panel-header J-panel-header">
+						<a href="" class="title"><i></i><em class="title">购物车</em></a> <span
+							class="close-panel J-close"></span>
+					</h3>
+					<div class="tbar-panel-main">
+						<div class="tbar-panel-content J-panel-content">
+
+							<div id="J-cart-render">
+								<div class="tbar-cart-list">
+									<c:forEach var="ol2" items="${ollist }">
+										<div class="tbar-cart-item">
+
+											<div class="jtc-item-goods">
+												<span class="p-img"><a href="#" target="_blank"><img
+														src="${ol2.picture }" height="50" width="50" /></a></span>
+												<div class="p-name">
+													<a href="#">${ol2.flower }</a>
+												</div>
+												<div class="p-price">
+													<strong>${ol2.price }</strong>&nbsp;
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：${ol2.number }
+												</div>
+												<a href="del2?id=${ol2.ID }" class="p-del J-del">删除</a>
+											</div>
+										</div>
+									</c:forEach>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tbar-panel-footer J-panel-footer">
+						<div class="tbar-checkout">
+
+							<a class="jtc-btn J-btn" href="cart">去购物车结算</a>
+						</div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+			<div class="toolbar-header"></div>
+
+			<div class="toolbar-tabs J-tab">
+				<div class="toolbar-tab tbar-tab-cart">
+					<i class="tab-ico"></i> <em class="tab-text ">购物车</em> <span
+						class="tab-sub J-count ">${len }</span>
+				</div>
+
+
+			</div>
+
+			<div class="toolbar-footer">
+				<div class="toolbar-tab tbar-tab-top">
+					<a href="#"> <i class="tab-ico  "></i> <em
+						class="footer-tab-text">顶部</em>
+					</a>
+				</div>
+			</div>
+
+			<div class="toolbar-mini"></div>
+
+		</div>
+
+		<div id="J-toolbar-load-hook"></div>
+
+	</div>
+	</div>
+	<script type="text/javascript" src='js/nav.js'></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>

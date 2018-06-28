@@ -32,44 +32,74 @@ public class FlowerController {
 
 	@Resource
 	private FlowerService flowerService;
-	
+
 	@Resource
 	private OrderService oService;
-	
+
 	@Resource
 	private OrderlistService orlService;
-	
+
 	@Resource
 	private CommentService comService;
-	
+
+	// 存储购物车记录
 	List<OrderlistFlower> olist = new ArrayList<OrderlistFlower>();
-	
-	
+
+	/**
+	 * 
+	 * @Title: cart
+	 * @Description: TODO(跳到购物车)  @param: @param request  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String cart(HttpServletRequest request, Model model) {
-		
+
 		return "shoppingC";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: forpay
+	 * @Description: TODO(调到forpay页面)  @param: @param request  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/forpay", method = RequestMethod.GET)
 	public String forpay(HttpServletRequest request, Model model) {
-		
+
 		return "forpay";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: intro
+	 * @Description: TODO(调到店铺信息页面)  @param: @param request  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/intro", method = RequestMethod.GET)
 	public String intro(HttpServletRequest request, Model model) {
-		
+
 		return "introduce";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: all
+	 * @Description: TODO(所有商品)  @param: @param request  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
 		List<Flower> flist = flowerService.findAll();
 		model.addAttribute("allFlower", flist);
 		return "allshop";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: one
+	 * @Description: TODO(到某一商品信息页面)  @param: @param id  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
 	public String one(@RequestParam("id") String id, Model model) {
 		int ID = Integer.parseInt(id);
@@ -81,20 +111,28 @@ public class FlowerController {
 		model.addAttribute("clist", clist);
 		return "shop";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: addComment
+	 * @Description: TODO(发表评论)  @param: @param cid  @param: @param request
+	 *                @param: @param model  @param: @return  @return: String
+	 *                @throws
+	 */
 	@RequestMapping(value = "/addComment", method = RequestMethod.POST)
-	public String  addComment(@RequestParam("cid") String cid,HttpServletRequest request, Model model) {
+	public String addComment(@RequestParam("cid") String cid, HttpServletRequest request, Model model) {
 		int cID = Integer.parseInt(cid);
-		
+
 		User users = (User) request.getSession().getAttribute("user");
 		Comment ct = new Comment();
 		String content = request.getParameter("content");
 		ct.setComment(content);
-		ct.setCommentID(cID);;
+		ct.setCommentID(cID);
+		;
 		ct.setUser(users.getUsername());
 		comService.add(ct);
-		model.addAttribute("ct", "<script>alert('评论发表成功')</script>");  
-		
+		model.addAttribute("ct", "<script>alert('评论发表成功')</script>");
+
 		Flower f = flowerService.findbyid(cID);
 		f.setCommentID(cID);
 		flowerService.editFlower(f);
@@ -105,19 +143,26 @@ public class FlowerController {
 		model.addAttribute("clist", clist);
 		return "shop";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: addCart
+	 * @Description: TODO(添加购买记录到购物车)  @param: @param request  @param: @param model
+	 *                @param: @return  @param: @throws IOException  @return: String
+	 *                @throws
+	 */
 	@RequestMapping(value = "/addCart", method = RequestMethod.POST)
 	public String addCart(HttpServletRequest request, Model model) throws IOException {
-		
-		int flag=0;
+
+		int flag = 0;
 		String name = request.getParameter("flower");
 		String type = request.getParameter("type");
 		String src = request.getParameter("picture");
 		int num = Integer.parseInt(request.getParameter("number"));
 		int id = Integer.parseInt(request.getParameter("ID"));
 		Double pic = Double.parseDouble(request.getParameter("price"));
-		Double money = pic*num;
-		
+		Double money = pic * num;
+
 		OrderlistFlower olf = new OrderlistFlower();
 		olf.setFlower(name);
 		olf.setNumber(num);
@@ -126,26 +171,27 @@ public class FlowerController {
 		olf.setID(id);
 		olf.setPicture(src);
 		olf.setType(type);
-		
+
 		for (OrderlistFlower oF : olist) {
-			if(name.equals(oF.getFlower()) ) {
-				 flag = 1;
-				 model.addAttribute("err2", "<script>alert('购物车中已有此商品')</script>");  
+			if (name.equals(oF.getFlower())) {
+				flag = 1;
+				model.addAttribute("err2", "<script>alert('购物车中已有此商品')</script>");
 			}
 		}
-		
-		if(flag==0) {
+
+		if (flag == 0) {
 			olist.add(olf);
-			model.addAttribute("suc", "<script>alert('添加成功')</script>");  
 		}
-		
+
 		HttpSession session = request.getSession(true);
-		session.setAttribute("ollist",olist);
-		
+		session.setAttribute("ollist", olist);
+
+		int osize = olist.size();
+		session.setAttribute("len", osize);
+
 		List<Flower> flist = flowerService.findAll();
 		model.addAttribute("allFlower", flist);
-		
-		
+
 		Flower f = flowerService.findbyid(id);
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
@@ -154,27 +200,39 @@ public class FlowerController {
 		model.addAttribute("clist", clist);
 		return "shop";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: del
+	 * @Description: TODO(购物车中删除某一购物信息)  @param: @param id  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/del", method = RequestMethod.GET)
 	public String del(@RequestParam("id") String id, Model model) {
 		int ID = Integer.parseInt(id);
-		for(int i =0;i<olist.size();i++) {
-			if(olist.get(i).getID()==ID) {
+		for (int i = 0; i < olist.size(); i++) {
+			if (olist.get(i).getID() == ID) {
 				olist.remove(i);
 			}
 		}
 		return "shoppingC";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: del2
+	 * @Description: TODO(同上，跳回到商品页面，右侧购物车使用)  @param: @param id  @param: @param
+	 *               model  @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/del2", method = RequestMethod.GET)
 	public String del2(@RequestParam("id") String id, Model model) {
 		int ID = Integer.parseInt(id);
-		for(int i =0;i<olist.size();i++) {
-			if(olist.get(i).getID()==ID) {
+		for (int i = 0; i < olist.size(); i++) {
+			if (olist.get(i).getID() == ID) {
 				olist.remove(i);
 			}
 		}
-		
+
 		Flower f = flowerService.findbyid(ID);
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
@@ -183,53 +241,58 @@ public class FlowerController {
 		model.addAttribute("clist", clist);
 		return "shop";
 	}
-	
+
+	/**
+	 * 
+	 * @Title: addOrder
+	 * @Description: TODO(购物车结算，正式下单)  @param: @param request  @param: @param model
+	 *                @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
-	public String  addOrder(HttpServletRequest request, Model model) {
+	public String addOrder(HttpServletRequest request, Model model) {
 		String[] a = request.getParameterValues("checkall");
-		
-		List<Order> orlist= oService.findAll();
-		
-		int lidinc = orlist.get(orlist.size()-1).getListID()+1;
+
+		List<Order> orlist = oService.findAll();
+
+		int lidinc = orlist.get(orlist.size() - 1).getListID() + 1;
 
 		User users = (User) request.getSession().getAttribute("user");
-		
+
 		Double sum = 0.0;
-		
+
 		Date d = new Date();
 		Order o = new Order();
 		o.setListID(lidinc++);
 		o.setTime(d);
 		o.setUsername(users.getUsername());
-		
-		
-		for(int i = 1;i<=10;i++) {
-			for (int j=0;j<a.length;j++) {
+
+		for (int i = 1; i <= 10; i++) {
+			for (int j = 0; j < a.length; j++) {
 				int s1 = Integer.parseInt(a[j]);
-				
-				if(i==s1) {
-					int num = Integer.parseInt(request.getParameter("number_'"+s1+"'"));
+
+				if (i == s1) {
+					int num = Integer.parseInt(request.getParameter("number_'" + s1 + "'"));
 					Flower f = flowerService.findbyid(i);
 					Orderlist ol = new Orderlist();
 					ol.setFlower(f.getName());
 					ol.setListID(o.getListID());
 					ol.setNumber(num);
-					ol.setPrice(num*f.getPrice());
+					ol.setPrice(num * f.getPrice());
 					orlService.addOrderlist(ol);
-					sum+=ol.getPrice();
-					for(int n =0;n<olist.size();n++) {
-						if(olist.get(n).getID()==i) {
+					sum += ol.getPrice();
+					for (int n = 0; n < olist.size(); n++) {
+						if (olist.get(n).getID() == i) {
 							olist.remove(n);
 						}
 					}
 				}
 			}
 		}
-		
+
 		o.setPrice(sum);
 		oService.addOrder(o);
-		model.addAttribute("suc2", "<script>alert('购买成功！<br>您可以到个人界面中查看订单信息')</script>");  
-		
+		model.addAttribute("suc2", "<script>alert('购买成功！<br>您可以到个人界面中查看订单信息')</script>");
+
 		return "index";
 	}
 }

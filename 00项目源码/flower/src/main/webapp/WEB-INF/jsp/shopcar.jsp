@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -34,9 +34,8 @@
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
-				<li>
-					<a href="loginin"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
-				</li>
+				<li><a href="loginin"><span class="glyphicon glyphicon-off"
+						aria-hidden="true"></span></a></li>
 			</ul>
 		</div>
 		<div class="s-top">
@@ -51,53 +50,53 @@
 		</div>
 		<div class="center">
 			<ul>
-					<li>
-						<a href="userin">
-							<p><span class="glyphicon glyphicon-user" id="center-1"></span>个人信息</p>
-						</a>
-					</li>
-					<li>
-						<a href="shopcar">
-							<p><span class="glyphicon glyphicon-shopping-cart" id="center-2"></span>订单详情</p>
-						</a>
-					</li>
-				</ul>
-<div class="center-1">
-					<table class="table table-striped" border="0">
-						<thead>
-							<tr>
-								<th width="90px">订单编号</th>
-								<th>清单号</th>
-								<th>图片</th>
-								<th>商品名</th>
-								<th>数量</th>
-								<th>价格</th>
-							</tr>
-						</thead>
-						<tbody>
+				<li><a href="userin">
+						<p>
+							<span class="glyphicon glyphicon-user" id="center-1"></span>个人信息
+						</p>
+				</a></li>
+				<li><a href="shopcar">
+						<p>
+							<span class="glyphicon glyphicon-shopping-cart" id="center-2"></span>订单详情
+						</p>
+				</a></li>
+			</ul>
+			<div class="center-1">
+				<table class="table table-striped" border="0">
+					<thead>
+						<tr>
+							<th width="90px">订单编号</th>
+							<th>清单号</th>
+							<th>图片</th>
+							<th>商品名</th>
+							<th>数量</th>
+							<th>价格</th>
+						</tr>
+					</thead>
+					<tbody>
 						<c:forEach var="ool" items="${oolist }">
 							<tr>
 								<td>${ool.orderID }</td>
 								<td>${ool.listID }</td>
 								<td><img src="${ool.src }" width="100px" height="80px"></td>
 								<td>${ool.flower }</td>
-								
+
 								<td>${ool.number }</td>
 								<td>${ool.price }</td>
-								
+
 							</tr>
-							</c:forEach>
-							
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="down">
-				<img src="img/down.png" style="width: 1600px; height: 700px;" />
+						</c:forEach>
+
+					</tbody>
+				</table>
 			</div>
 		</div>
-		<script src="js/jquery-2.1.1.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-	</body>
+		<div class="down">
+			<img src="img/down.png" style="width: 1600px; height: 700px;" />
+		</div>
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</body>
 
 </html>

@@ -34,10 +34,10 @@ public class UserManagerController {
 
 	@Resource
 	private UserService userService;
-	
+
 	@Resource
 	private OrderService oService;
-	
+
 	@Resource
 	private FlowerService fService;
 
@@ -93,21 +93,27 @@ public class UserManagerController {
 		return "information";
 
 	}
-	
+
+	/**
+	 * 
+	 * @Title: orderlistin
+	 * @Description: TODO(用户查看自己的所有清单信息)  @param: @param request  @param: @param
+	 *               model  @param: @return  @return: String  @throws
+	 */
 	@RequestMapping(value = "shopcar", method = RequestMethod.GET)
-	public String orderlistin(HttpServletRequest request,Model model) {
-		
+	public String orderlistin(HttpServletRequest request, Model model) {
+
 		User users = (User) request.getSession().getAttribute("user");
 		List<OrderOrderlist> oolist = oService.findOrderlistByUsername(users.getUsername());
 		List<Flower> flist = fService.findAll();
-		for(int j = 0 ;j<oolist.size();j++) {
-			for(int i = 0 ; i<flist.size();i++) {
-				if(flist.get(i).getName().equals(oolist.get(j).getFlower())) {
+		for (int j = 0; j < oolist.size(); j++) {
+			for (int i = 0; i < flist.size(); i++) {
+				if (flist.get(i).getName().equals(oolist.get(j).getFlower())) {
 					oolist.get(j).setSrc(flist.get(i).getPicture());
 				}
 			}
 		}
-		
+
 		model.addAttribute("oolist", oolist);
 		return "shopcar";
 	}

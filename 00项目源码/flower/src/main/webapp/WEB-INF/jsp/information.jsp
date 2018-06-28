@@ -36,9 +36,8 @@
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 				</li>
-				<li>
-					<a href="loginin"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
-				</li>
+				<li><a href="loginin"><span class="glyphicon glyphicon-off"
+						aria-hidden="true"></span></a></li>
 			</ul>
 		</div>
 		<div class="s-top">
@@ -53,17 +52,17 @@
 		</div>
 		<div class="center">
 			<ul>
-					<li>
-						<a href="userin">
-							<p><span class="glyphicon glyphicon-user" id="center-1"></span>个人信息</p>
-						</a>
-					</li>
-					<li>
-						<a href="shopcar">
-							<p><span class="glyphicon glyphicon-shopping-cart" id="center-2"></span>订单详情</p>
-						</a>
-					</li>
-				</ul>
+				<li><a href="userin">
+						<p>
+							<span class="glyphicon glyphicon-user" id="center-1"></span>个人信息
+						</p>
+				</a></li>
+				<li><a href="shopcar">
+						<p>
+							<span class="glyphicon glyphicon-shopping-cart" id="center-2"></span>订单详情
+						</p>
+				</a></li>
+			</ul>
 			<div class="center-1">
 				<form action="editUser" method="post" enctype="multipart/form-data">
 					<table border="0" width="900px" height="s00px"
@@ -76,17 +75,18 @@
 						<tr height="80px">
 							<td>性别</td>
 
-							<td>
-									<input type="radio" name="sex" value="男" style="margin-left: 100px;" <c:if test="${user.sex eq '男'}"> checked="checked"</c:if>  />男 
-									<input type="radio" name="sex" style="margin-left: 100px;" value="女" <c:if test="${user.sex eq '女'}"> checked="checked"</c:if> />女
-								</td>
+							<td><input type="radio" name="sex" value="男"
+								style="margin-left: 100px;"
+								<c:if test="${user.sex eq '男'}"> checked="checked"</c:if> />男 <input
+								type="radio" name="sex" style="margin-left: 100px;" value="女"
+								<c:if test="${user.sex eq '女'}"> checked="checked"</c:if> />女</td>
 						</tr>
 						<tr height="100px">
 							<td>头像</td>
 							<td><img src="${user.photo}" width="80px" height="80px"
-								style="margin-left: 220px;margin-top:10px;"> <input type="file"
-								name="pictureFile" value="上传图片" 
-								style="margin-left: 170px;margin-bottom:20px; width: 250px;" /></td>
+								style="margin-left: 220px; margin-top: 10px;"> <input
+								type="file" name="pictureFile" value="上传图片"
+								style="margin-left: 170px; margin-bottom: 20px; width: 250px;" /></td>
 						</tr>
 						<tr height="80px">
 							<td>联系方式</td>
@@ -101,8 +101,8 @@
 						</tr>
 						<tr>
 							<td>个人简介</td>
-							<td><textarea  rows="5"
-									cols="70" name="introduction" style="margin-left: 50px;">${user.introduction }</textarea></td>
+							<td><textarea rows="5" cols="70" name="introduction"
+									style="margin-left: 50px;">${user.introduction }</textarea></td>
 						</tr>
 						<tr>
 							<td></td>
