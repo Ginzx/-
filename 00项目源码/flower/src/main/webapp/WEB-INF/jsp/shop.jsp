@@ -221,17 +221,41 @@
 								<td>${ct.user }</td>
 							</tr>
 						</c:forEach>
-						<form action="addComment?cid=${flower.commentID }" method="post">
+						
+						
 						<tr>
-							<td>
-							<input type="hidden" name="cidt" value="${flower.ID }"/>
-							<textarea rows="5" cols="120" name="content"></textarea></td>
+							<td><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	发布评论
+</button>
+<!-- 模态框（Modal） -->
+<form action="addComment?cid=${flower.commentID }" method="post" id="addC">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<input type="hidden" name="cidt" value="${flower.ID }"/>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					请发布你的评论
+				</h4>
+			</div>
+			<div class="modal-body">
+				<textarea rows="5" cols="80" name="content"></textarea>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="submit" class="btn btn-primary" value="submit" form="addC">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div></td>
 						</tr>
-						<tr>
-							<td><input type="submit" value="提交评论"
-								style="margin-left: 600px; width: 100px; height: 40px;"></td>
-						</tr>
-						</form>
+						 </form> 
 					</table>
 				</div>
 			</div>
