@@ -51,6 +51,11 @@ public class FlowerController {
 		return "shoppingC";
 	}
 	
+	@RequestMapping(value = "/rightcart", method = RequestMethod.GET)
+	public String rcart(HttpServletRequest request, Model model) {
+		
+		return "shoppingCart";
+	}
 
 	
 	
@@ -155,6 +160,24 @@ public class FlowerController {
 			}
 		}
 		return "shoppingC";
+	}
+	
+	@RequestMapping(value = "/del2", method = RequestMethod.GET)
+	public String del2(@RequestParam("id") String id, Model model) {
+		int ID = Integer.parseInt(id);
+		for(int i =0;i<olist.size();i++) {
+			if(olist.get(i).getID()==ID) {
+				olist.remove(i);
+			}
+		}
+		
+		Flower f = flowerService.findbyid(ID);
+		model.addAttribute("flower", f);
+		List<Flower> flist1 = flowerService.findAll();
+		model.addAttribute("allFlower1", flist1);
+		List<Comment> clist = comService.findbyflower(f.getCommentID());
+		model.addAttribute("clist", clist);
+		return "shop";
 	}
 	
 	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
