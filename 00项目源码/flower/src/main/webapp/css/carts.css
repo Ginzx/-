@@ -33,7 +33,7 @@ a:hover{
     width: 1200px;
     min-width: 1200px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left:-140px;
     padding: 0px 0px 100px;
     min-height: 210px;
 }

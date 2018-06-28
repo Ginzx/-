@@ -51,13 +51,17 @@ public class FlowerController {
 		return "shoppingC";
 	}
 	
-	@RequestMapping(value = "/rightcart", method = RequestMethod.GET)
-	public String rcart(HttpServletRequest request, Model model) {
+	@RequestMapping(value = "/forpay", method = RequestMethod.GET)
+	public String forpay(HttpServletRequest request, Model model) {
 		
-		return "shoppingCart";
+		return "forpay";
 	}
-
 	
+	@RequestMapping(value = "/intro", method = RequestMethod.GET)
+	public String intro(HttpServletRequest request, Model model) {
+		
+		return "introduce";
+	}
 	
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
