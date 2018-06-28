@@ -28,7 +28,7 @@
 			<ul id="m-top-1">
 				<li><a href="#"><span class="glyphicon glyphicon-search"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"
+				<li><a href="userin"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
@@ -77,7 +77,7 @@
 		<div class="down">
 			<img src="img/down.png" style="width: 1600px; height: 700px;" />
 		</div>
-		<div>${err2 }</div>
+		
 	</div>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

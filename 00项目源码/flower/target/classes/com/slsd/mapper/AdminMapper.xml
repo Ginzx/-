@@ -8,6 +8,6 @@
 	</select>
 	<select id="findorder" resultType="com.slsd.entity.AdminOrder">
 		SELECT a.OrderID,a.price,username,o.flower,o.number,f.picture FROM orders a
-		,orderlist o,flower f WHERE a.listid=o.listid AND o.flower=f.name ORDER BY c.orderid;
+		,orderlist o,flower f WHERE a.listid=o.listid AND o.flower=f.name ORDER BY a.orderid;
 	</select>
 </mapper>

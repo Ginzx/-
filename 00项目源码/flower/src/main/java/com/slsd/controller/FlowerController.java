@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.slsd.entity.Comment;
 import com.slsd.entity.Flower;
 import com.slsd.entity.Order;
 import com.slsd.entity.Orderlist;
 import com.slsd.entity.OrderlistFlower;
 import com.slsd.entity.User;
+import com.slsd.service.CommentService;
 import com.slsd.service.FlowerService;
 import com.slsd.service.OrderService;
 import com.slsd.service.OrderlistService;
@@ -36,6 +38,9 @@ public class FlowerController {
 	
 	@Resource
 	private OrderlistService orlService;
+	
+	@Resource
+	private CommentService comService;
 	
 	List<OrderlistFlower> olist = new ArrayList<OrderlistFlower>();
 	
@@ -63,9 +68,32 @@ public class FlowerController {
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
 		model.addAttribute("allFlower1", flist1);
+		List<Comment> clist = comService.findbyflower(f.getCommentID());
+		model.addAttribute("clist", clist);
 		return "shop";
 	}
 	
+	@RequestMapping(value = "/addComment", method = RequestMethod.POST)
+	public String  addComment(@RequestParam("cid") String cid,HttpServletRequest request, Model model) {
+		int cID = Integer.parseInt(cid);
+		
+		User users = (User) request.getSession().getAttribute("user");
+		Comment ct = new Comment();
+		String content = request.getParameter("content");
+		ct.setComment(content);
+		ct.setCommentID(cID);;
+		ct.setUser(users.getUsername());
+		comService.add(ct);
+		model.addAttribute("ct", "<script>alert('评论发表成功')</script>");  
+		int ID = Integer.parseInt(request.getParameter("cidt"));
+		Flower f = flowerService.findbyid(ID);
+		model.addAttribute("flower", f);
+		List<Flower> flist1 = flowerService.findAll();
+		model.addAttribute("allFlower1", flist1);
+		List<Comment> clist = comService.findbyflower(f.getCommentID());
+		model.addAttribute("clist", clist);
+		return "shop";
+	}
 	
 	@RequestMapping(value = "/addflower", method = RequestMethod.POST)
 	public String  addFlower(Flower f, Map<String, Object> model) {
@@ -108,6 +136,7 @@ public class FlowerController {
 		
 		if(flag==0) {
 			olist.add(olf);
+			model.addAttribute("suc", "<script>alert('添加成功')</script>");  
 		}
 		
 		HttpSession session = request.getSession(true);
@@ -116,7 +145,14 @@ public class FlowerController {
 		List<Flower> flist = flowerService.findAll();
 		model.addAttribute("allFlower", flist);
 		
-		return "allshop";
+		
+		Flower f = flowerService.findbyid(id);
+		model.addAttribute("flower", f);
+		List<Flower> flist1 = flowerService.findAll();
+		model.addAttribute("allFlower1", flist1);
+		List<Comment> clist = comService.findbyflower(f.getCommentID());
+		model.addAttribute("clist", clist);
+		return "shop";
 	}
 	
 	@RequestMapping(value = "/del", method = RequestMethod.GET)
@@ -137,7 +173,7 @@ public class FlowerController {
 		List<Order> orlist= oService.findAll();
 		
 		int lidinc = orlist.get(orlist.size()-1).getListID()+1;
-		
+
 		User users = (User) request.getSession().getAttribute("user");
 		
 		Double sum = 0.0;
@@ -174,6 +210,7 @@ public class FlowerController {
 		
 		o.setPrice(sum);
 		oService.addOrder(o);
+		model.addAttribute("suc2", "<script>alert('购买成功！<br>您可以到个人界面中查看订单信息')</script>");  
 		
 		return "index";
 	}

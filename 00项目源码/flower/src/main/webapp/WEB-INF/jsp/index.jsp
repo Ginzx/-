@@ -115,6 +115,9 @@
 			<div class="down">
 				<img src="img/down.png" style="width: 1600px; height: 700px;" />
 			</div>
+			<div>
+				${suc2 }
+			</div>
 		</div>
 	</div>
 	</div>
