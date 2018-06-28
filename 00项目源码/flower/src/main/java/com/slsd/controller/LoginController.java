@@ -110,6 +110,16 @@ public class LoginController {
 		}
 	}
 
+	/**
+	* @Title: forget
+	* @Description: 修改密码功能
+	* @param: @param request
+	* @param: @param model
+	* @param: @return
+	* @param: @throws IOException
+	* @return: String
+	* @throws
+	*/
 	@RequestMapping(value = "/forget", method = RequestMethod.POST)
 	public String forget(HttpServletRequest request, Model model) throws IOException {
 
