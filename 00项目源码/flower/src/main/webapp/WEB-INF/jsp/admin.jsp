@@ -96,8 +96,8 @@
 			</a>
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<!-- 资源管理模块 -->
-				<div role="tabpanel" class="tab-pane active" id="sour">
+				<!-- 订单管理模块 -->
+				<div role="tabpanel" class="tab-pane" id="sour">
 					<div class="data-div">
 						<!--
                             订单查询中间内容
@@ -105,7 +105,7 @@
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th >订单编号</th>
+									<th>订单编号</th>
 									<th>图片</th>
 									<th>订单详情</th>
 									<th>总价格</th>
@@ -119,7 +119,7 @@
 										<td><img src="${orders.pictre}" width="100px"
 											height="100px"></td>
 										<td>${orders.flower}共${orders.number}个</td>
-									
+
 										<td>${orders.price}</td>
 										<td>${orders.username}</td>
 									</tr>
@@ -128,8 +128,8 @@
 						</table>
 					</div>
 				</div>
-				<!-- 权限管理模块 -->
-				<div role="tabpanel" class="tab-pane" id="char">
+				<!-- 用户查询模块 -->
+				<div role="tabpanel" class="tab-pane" id="userid">
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -159,8 +159,8 @@
 
 
 				</div>
-				<!--用户管理模块-->
-				<div role="tabpanel" class="tab-pane" id="user">
+				<!--商品管理模块-->
+				<div role="tabpanel" class="tab-pane  active" id="flower">
 					<div class="check-div form-inline">
 						<div class="col-xs-3">
 							<button class="btn btn-yellow btn-xs" data-toggle="modal"
@@ -181,94 +181,72 @@
 						</thead>
 						<tbody>
 							<c:forEach var="flower" items="${flowers }">
-								<tr>
-									<td>${flower.ID}</td>
-									<td>${flower.name}</td>
-									<td><img src="${flower.picture}" width="100px"
-										height="100px"></td>
-									<td>${flower.price}</td>
-									<td>${flower.type}</td>
-									<td>
-										<button class="btn btn-primary btn-lg" data-toggle="modal"
-											data-target="#myModal">修改</button> <!-- 模态框（Modal） -->
-										<div class="modal fade" id="myModal" tabindex="-1"
-											role="dialog" aria-labelledby="myModalLabel"
-											aria-hidden="true">
-											<div class="modal-dialog">
-												<div class="modal-content">
-													<div class="modal-header">
-														<button type="button" class="close" data-dismiss="modal"
-															aria-hidden="true">&times;</button>
-														<h4 class="modal-title" id="myModalLabel">修改商品</h4>
-													</div>
-													<div class="modal-body">
-														<table width="380px" height="400px" border="0">
-															<tr>
-																<td>植物编号：</td>
-																<td><input type="text"></td>
-															</tr>
-															<tr>
-																<td>植物名字：</td>
-																<td><input type="text"></td>
-															</tr>
-															<tr>
-																<td>植物照片：</td>
-																<td><input type="text"><input type="submit"
-																	value="上传图片" style="margin-left: 10px;"></td>
-															</tr>
-															<tr>
-																<td>植物价格：</td>
-																<td><input type="text"></td>
-															</tr>
-															<tr>
-																<td>植物类型：</td>
-																<td><input type="text"></td>
-															</tr>
+								<form action="editflower" method="post">
+									<tr>
+										<td>${flower.ID}</td>
+										<td>${flower.name}</td>
+										<td><img src="${flower.picture}" width="100px"
+											name="picture" height="100px"></td>
+										<td>${flower.price}</td>
+										<td>${flower.type}</td>
+										<td>
+											<button class="btn btn-primary btn-lg" data-toggle="modal"
+												data-target="#myModal">修改</button> <!-- 模态框（Modal） -->
+											<div class="modal fade" id="${flower.ID}" tabindex="-1"
+												role="dialog" aria-labelledby="myModalLabel"
+												aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal"
+																aria-hidden="true">&times;</button>
+															<h4 class="modal-title" id="myModalLabel">修改商品</h4>
+														</div>
+														<div class="modal-body">
+															<table width="380px" height="400px" border="0">
+																<tr>
+																	<td>植物编号：</td>
+																	<td><input type="text" name="ID"></td>
+																</tr>
+																<tr>
+																	<td>植物名字：</td>
+																	<td><input type="text" name="fname"></td>
+																</tr>
+																<tr>
+																	<td>植物价格：</td>
+																	<td><input type="text" name="price"></td>
+																</tr>
+																<tr>
+																	<td>植物类型：</td>
+																	<td><input type="text" name="type"></td>
+																</tr>
 
-														</table>
+															</table>
 
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-default"
+																data-dismiss="modal">关闭</button>
+															<button type="submit" class="btn btn-primary">提交更改</button>
+														</div>
 													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-default"
-															data-dismiss="modal">关闭</button>
-														<button type="button" class="btn btn-primary">提交更改</button>
-													</div>
+													<!-- /.modal-content -->
 												</div>
-												<!-- /.modal-content -->
-											</div>
-											<!-- /.modal -->
-										</div>
-										<button class="btn btn-danger btn-xs" data-toggle="modal"
-											data-target="#deleteChar"
-											style="width: 70px; height: 45px; font-size: 16px; margin-left: 20px;">删除</button>
-									</td>
-								</tr>
+												<!-- /.modal -->
+											</div><a href="deltflower">
+											<button class="btn btn-danger btn-xs" data-toggle="modal"
+												data-target="#deleteChar"
+												style="width: 70px; height: 45px; font-size: 16px; margin-left: 20px;">删除</button>
+										</a>
+										</td>
+									</tr>
+								</form>
 							</c:forEach>
 						</tbody>
 					</table>
-					<!--页码块-->
-					<footer class="footer">
-						<ul class="pagination">
-							<li><select>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
-									<option>9</option>
-									<option>10</option>
-							</select> 页</li>
-							<li class="gray">共20页</li>
-							<li><i class="glyphicon glyphicon-menu-left"> </i></li>
-							<li><i class="glyphicon glyphicon-menu-right"> </i></li>
-						</ul>
-					</footer>
 
-					<!--弹出添加用户窗口-->
-					<div class="modal fade" id="addUser" role="dialog"
+					<!--弹出添加商品窗口-->
+					<div class="modal fade " id="addUser" role="dialog"
 						aria-labelledby="gridSystemModalLabel">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
