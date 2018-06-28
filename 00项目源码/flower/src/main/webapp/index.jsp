@@ -15,6 +15,6 @@
 </head>
 <body>
 <a href="loginin">123</a>
-<a href="registerin">123</a>
+<a href="forgetin">123</a>
 </body>
 </html>
