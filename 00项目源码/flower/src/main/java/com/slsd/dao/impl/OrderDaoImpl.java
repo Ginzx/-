@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.slsd.dao.OrderDao;
 import com.slsd.entity.Order;
+import com.slsd.entity.OrderOrderlist;
 
 /**
 * @ClassName: OrderDaoImpl
@@ -62,6 +63,12 @@ public class OrderDaoImpl extends SqlSessionDaoSupport implements OrderDao {
 		SqlSession sqlSession = this.getSqlSession();
 		Order o = sqlSession.selectOne("findByOrderid",orderid);
 		return o;
+	}
+
+	public List<OrderOrderlist> findOrderlistByUsername(String name) {
+		SqlSession sqlSession = this.getSqlSession();
+		List<OrderOrderlist> olist = sqlSession.selectList("findOrderlistByUsername",name);
+		return olist;
 	}
 
 }

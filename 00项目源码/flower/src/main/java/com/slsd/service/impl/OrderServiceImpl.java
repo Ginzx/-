@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.slsd.dao.OrderDao;
 import com.slsd.entity.Order;
+import com.slsd.entity.OrderOrderlist;
 import com.slsd.service.OrderService;
 
 /**
@@ -53,6 +54,11 @@ public class OrderServiceImpl implements OrderService {
 	public Order findByOrderid(int orderid) {
 		// TODO Auto-generated method stub
 		return orderDao.findByOrderid(orderid);
+	}
+
+	public List<OrderOrderlist> findOrderlistByUsername(String name) {
+		// TODO Auto-generated method stub
+		return orderDao.findOrderlistByUsername(name);
 	}
 
 }

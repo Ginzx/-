@@ -30,5 +30,10 @@
 		delete from orders where
 		orderId=#{orderID}
 	</delete>
+	
+	<select id="findOrderlistByUsername" resultType="com.slsd.entity.OrderOrderlist" parameterType="String">
+		SELECT a.orderid,a.listid,a.username,o.lid,o.number,o.flower,o.price FROM orders a
+		,orderlist o WHERE a.listid=o.listid AND a.username =#{username};
+	</select>
 
 </mapper> 

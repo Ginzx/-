@@ -307,7 +307,7 @@
 							<div class="tbar-panel-footer J-panel-footer">
 								<div class="tbar-checkout">
 									
-									<a class="jtc-btn J-btn" href="cart" target="_blank">去购物车结算</a>
+									<a class="jtc-btn J-btn" href="cart" >去购物车结算</a>
 								</div>
 							</div>
 						</div>

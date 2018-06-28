@@ -53,8 +53,10 @@
 	margin-top: 100px;
 }
 #center-1{
-	margin-left: 50px;
-	margin-top: 30px;
+
+	font-size: 35px;
+}
+#center-2{
 	font-size: 35px;
 }
 .center-1{
@@ -62,6 +64,16 @@
 	height: 700px;
 	border: 1px solid dimgrey;
 	margin-left: 50px;
+	margin-top: 90px;
+}
+.center ul{
+	margin-left: 20px;
+	margin-top: 30px;
+}
+.center ul li{
+	float: left;
+	list-style: none;
+	margin-left: 40px;
 }
 .down{
 	width: 1600px;

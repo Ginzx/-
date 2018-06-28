@@ -3,6 +3,7 @@ package com.slsd.dao;
 import java.util.List;
 
 import com.slsd.entity.Order;
+import com.slsd.entity.OrderOrderlist;
 
 /**
  * 
@@ -79,5 +80,15 @@ public interface OrderDao {
 	* @throws
 	 */
 	public Order findByOrderid(int orderid);
+	
+	/**
+	 * 
+	* @Title: findOrderlistByUsername
+	* @Description: TODO(获取某用户的订单详情)
+	* @param: @return
+	* @return: List<OrderOrderlist>
+	* @throws
+	 */
+	public List<OrderOrderlist> findOrderlistByUsername(String name);
 }
 

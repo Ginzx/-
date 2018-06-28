@@ -1,6 +1,7 @@
 package com.slsd.controller;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Resource;
@@ -9,11 +10,16 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.slsd.entity.Flower;
+import com.slsd.entity.OrderOrderlist;
 import com.slsd.entity.User;
+import com.slsd.service.FlowerService;
+import com.slsd.service.OrderService;
 import com.slsd.service.UserService;
 
 /**
@@ -28,6 +34,12 @@ public class UserManagerController {
 
 	@Resource
 	private UserService userService;
+	
+	@Resource
+	private OrderService oService;
+	
+	@Resource
+	private FlowerService fService;
 
 	/**
 	 * @Title: userin @Description: 跳转到个人信息界面 @param: @return @return:
@@ -80,6 +92,24 @@ public class UserManagerController {
 		// 重定向到查询所有用户的Controller，测试图片显示
 		return "information";
 
+	}
+	
+	@RequestMapping(value = "shopcar", method = RequestMethod.GET)
+	public String orderlistin(HttpServletRequest request,Model model) {
+		
+		User users = (User) request.getSession().getAttribute("user");
+		List<OrderOrderlist> oolist = oService.findOrderlistByUsername(users.getUsername());
+		List<Flower> flist = fService.findAll();
+		for(int j = 0 ;j<oolist.size();j++) {
+			for(int i = 0 ; i<flist.size();i++) {
+				if(flist.get(i).getName().equals(oolist.get(j).getFlower())) {
+					oolist.get(j).setSrc(flist.get(i).getPicture());
+				}
+			}
+		}
+		
+		model.addAttribute("oolist", oolist);
+		return "shopcar";
 	}
 
 }

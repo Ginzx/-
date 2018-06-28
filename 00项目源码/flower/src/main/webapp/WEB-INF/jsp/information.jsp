@@ -31,7 +31,7 @@
 			<ul id="m-top-1">
 				<li><a href="#"><span class="glyphicon glyphicon-search"
 						aria-hidden="true"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"
+				<li><a href="userin"><span class="glyphicon glyphicon-user"
 						aria-hidden="true"></span></a></li>
 				<li><a href="cart"><span
 						class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
@@ -52,9 +52,18 @@
 			</ul>
 		</div>
 		<div class="center">
-			<p>
-				<span class="glyphicon glyphicon-user" id="center-1"></span>个人信息
-			</p>
+			<ul>
+					<li>
+						<a href="userin">
+							<p><span class="glyphicon glyphicon-user" id="center-1"></span>个人信息</p>
+						</a>
+					</li>
+					<li>
+						<a href="shopcar">
+							<p><span class="glyphicon glyphicon-shopping-cart" id="center-2"></span>订单详情</p>
+						</a>
+					</li>
+				</ul>
 			<div class="center-1">
 				<form action="editUser" method="post" enctype="multipart/form-data">
 					<table border="0" width="900px" height="s00px"

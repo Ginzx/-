@@ -1,7 +1,5 @@
 package com.slsd.test;
 
-import static org.junit.Assert.fail;
-
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.slsd.entity.Order;
+import com.slsd.entity.OrderOrderlist;
 import com.slsd.service.OrderService;
 
 @RunWith(SpringJUnit4ClassRunner.class) // 表示继承了SpringJUnit4ClassRunner类
@@ -66,4 +65,11 @@ public class OrderDaoTest {
 			System.out.println(o);
 	}
 
+	@Test
+	public void testFindByUsername2() {
+		List<OrderOrderlist> olist = orderService.findOrderlistByUsername("wqm01");
+		for (OrderOrderlist o : olist) {
+			System.out.println(o);
+		}
+	}
 }

@@ -3,6 +3,7 @@ package com.slsd.service;
 import java.util.List;
 
 import com.slsd.entity.Order;
+import com.slsd.entity.OrderOrderlist;
 
 /**
  * 
@@ -26,4 +27,6 @@ public interface OrderService {
 	public List<Order> findByUsername(String username);
 	
 	public Order findByOrderid(int orderid);
+	
+	public List<OrderOrderlist> findOrderlistByUsername(String name);
 }
