@@ -1,6 +1,8 @@
 package com.slsd.controller;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,6 +14,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.slsd.entity.AdminOrder;
@@ -101,11 +104,27 @@ public class AdminController {
 		// 如果是管理员账号则进入管理员界面
 		return "admin";
 	}
-	
-	@RequestMapping(value = "/delflower", method = RequestMethod.POST)
-	public String del(HttpServletRequest request) {
+
+	@RequestMapping(value = "/delflower", method = RequestMethod.GET)
+	public String del(HttpServletRequest request, @RequestParam("id") String id) throws IOException {
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession(true);
 		
+		int id1=Integer.parseInt(id);
+		boolean flag=flowerService.delFlower(id1);
+
+		List<AdminOrder> adminorders = adminService.findorder();
+		// 查询所有用户信息
+		List<User> users1 = userService.getAll();
+		// 查询所有商品信息
+		List<Flower> flowers = flowerService.findAll();
+
+		session.setAttribute("orders", adminorders);
+		session.setAttribute("flowers", flowers);
+		session.setAttribute("users", users1);
+		// 如果是管理员账号则进入管理员界面
+
 		return "admin";
 	}
-	
+
 }
