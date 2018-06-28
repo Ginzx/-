@@ -97,17 +97,6 @@ public class FlowerController {
 		return "shop";
 	}
 	
-	@RequestMapping(value = "/addflower", method = RequestMethod.POST)
-	public String  addFlower(Flower f, Map<String, Object> model) {
-		boolean flag = flowerService.addFlower(f);
-		if(flag) {
-			return "index";
-		}else {
-			return "allshop";
-		}
-		
-	}
-	
 	@RequestMapping(value = "/addCart", method = RequestMethod.POST)
 	public String addCart(HttpServletRequest request, Model model) throws IOException {
 		
