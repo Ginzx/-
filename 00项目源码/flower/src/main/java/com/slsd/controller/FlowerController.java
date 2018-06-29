@@ -77,7 +77,6 @@ public class FlowerController {
 	 */
 	@RequestMapping(value = "/intro", method = RequestMethod.GET)
 	public String intro(HttpServletRequest request, Model model) {
-
 		return "introduce";
 	}
 
@@ -89,6 +88,7 @@ public class FlowerController {
 	 */
 	@RequestMapping(value = "/allshop", method = RequestMethod.GET)
 	public String all(HttpServletRequest request, Model model) {
+		// 便利数据库中所有的商品信息
 		List<Flower> flist = flowerService.findAll();
 		model.addAttribute("allFlower", flist);
 		return "allshop";
@@ -102,12 +102,16 @@ public class FlowerController {
 	 */
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
 	public String one(@RequestParam("id") String id, Model model) {
+
 		int ID = Integer.parseInt(id);
 		Flower f = flowerService.findbyid(ID);
+
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
+
 		model.addAttribute("allFlower1", flist1);
 		List<Comment> clist = comService.findbyflower(f.getCommentID());
+
 		model.addAttribute("clist", clist);
 		return "shop";
 	}
@@ -122,23 +126,26 @@ public class FlowerController {
 	@RequestMapping(value = "/addComment", method = RequestMethod.POST)
 	public String addComment(@RequestParam("cid") String cid, HttpServletRequest request, Model model) {
 		int cID = Integer.parseInt(cid);
-
+		// 从session中调用user
 		User users = (User) request.getSession().getAttribute("user");
 		Comment ct = new Comment();
 		String content = request.getParameter("content");
 		ct.setComment(content);
 		ct.setCommentID(cID);
-		;
+
 		ct.setUser(users.getUsername());
 		comService.add(ct);
 		model.addAttribute("ct", "<script>alert('评论发表成功')</script>");
 
 		Flower f = flowerService.findbyid(cID);
 		f.setCommentID(cID);
+		// 修改商品所对应的评论好
 		flowerService.editFlower(f);
 		model.addAttribute("flower", f);
+		// 遍历数据库中的商品信息
 		List<Flower> flist1 = flowerService.findAll();
 		model.addAttribute("allFlower1", flist1);
+		// 遍历相应商品的评论信息
 		List<Comment> clist = comService.findbyflower(f.getCommentID());
 		model.addAttribute("clist", clist);
 		return "shop";
@@ -155,14 +162,17 @@ public class FlowerController {
 	public String addCart(HttpServletRequest request, Model model) throws IOException {
 
 		int flag = 0;
+		// 获取前台相应的值
 		String name = request.getParameter("flower");
 		String type = request.getParameter("type");
 		String src = request.getParameter("picture");
 		int num = Integer.parseInt(request.getParameter("number"));
 		int id = Integer.parseInt(request.getParameter("ID"));
+		// 获取商品单价
 		Double pic = Double.parseDouble(request.getParameter("price"));
+		// 计算总价格
 		Double money = pic * num;
-
+      
 		OrderlistFlower olf = new OrderlistFlower();
 		olf.setFlower(name);
 		olf.setNumber(num);
@@ -173,7 +183,7 @@ public class FlowerController {
 		olf.setType(type);
 
 		for (OrderlistFlower oF : olist) {
-			if (name.equals(oF.getFlower())) {
+			if (name.equals(oF.getFlower())) {// 如果用户添加购物车内已经有的商品
 				flag = 1;
 				model.addAttribute("err2", "<script>alert('购物车中已有此商品')</script>");
 			}
@@ -191,7 +201,7 @@ public class FlowerController {
 
 		List<Flower> flist = flowerService.findAll();
 		model.addAttribute("allFlower", flist);
-
+		// 遍历所有商品信息
 		Flower f = flowerService.findbyid(id);
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
@@ -232,7 +242,7 @@ public class FlowerController {
 				olist.remove(i);
 			}
 		}
-
+        //右侧购物车内删除商品信息后遍历数据库内的信息
 		Flower f = flowerService.findbyid(ID);
 		model.addAttribute("flower", f);
 		List<Flower> flist1 = flowerService.findAll();
