@@ -60,7 +60,7 @@
 					</tr>
 					<tr height="60px">
 						<td width="150px" align="center">修改后的密码</td>
-						<td align="center"><input type="password"
+						<td align="center"><input type="text"
 							placeholder="请输入修改后的密码" style="width: 250px;" name="pwd1"></td>
 					</tr>
 					<tr height="60px">

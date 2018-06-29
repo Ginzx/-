@@ -222,7 +222,7 @@
 																		value="${flower.price}"></td>
 																</tr>
 																<tr>
-																	<td>植物类型：</td>
+																	<td>商品类型：</td>
 																	<td><input type="text" name="type"
 																		value="${flower.type}"></td>
 																</tr>

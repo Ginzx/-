@@ -303,7 +303,7 @@ public class FlowerController {
 
 		o.setPrice(sum);
 		oService.addOrder(o);
-		model.addAttribute("suc2", "<script>alert('购买成功！<br>您可以到个人界面中查看订单信息')</script>");
+		model.addAttribute("suc2", "<script>alert('购买成功！您可以到个人界面中查看订单信息')</script>");
 
 		return "index";
 	}
