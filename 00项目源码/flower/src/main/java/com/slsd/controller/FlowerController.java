@@ -260,22 +260,24 @@ public class FlowerController {
 	 */
 	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
 	public String addOrder(HttpServletRequest request, Model model) {
-		String[] a = request.getParameterValues("checkall");
+		String[] a = request.getParameterValues("checkall");//获取购物车中已选中的商品ID
 
 		List<Order> orlist = oService.findAll();
 
-		int lidinc = orlist.get(orlist.size() - 1).getListID() + 1;
+		int lidinc = orlist.get(orlist.size() - 1).getListID() + 1;//获得商品信息中最大的清单编号并+1
 
-		User users = (User) request.getSession().getAttribute("user");
+		User users = (User) request.getSession().getAttribute("user");//获得当前登陆用户信息
 
 		Double sum = 0.0;
 
+		//创建订单
 		Date d = new Date();
 		Order o = new Order();
 		o.setListID(lidinc++);
 		o.setTime(d);
 		o.setUsername(users.getUsername());
 
+		//结算购物车，清空购物车中已支付的商品信息
 		for (int i = 1; i <= 10; i++) {
 			for (int j = 0; j < a.length; j++) {
 				int s1 = Integer.parseInt(a[j]);
