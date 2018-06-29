@@ -25,7 +25,7 @@ import com.slsd.service.UserService;
 /**
  * @ClassName: UserManagerController
  * @Description:个人信息管理相关功能
- * @author: Administrator
+ * @author: 王启明
  * @date: 2018年6月26日 下午2:25:33
  *
  */
