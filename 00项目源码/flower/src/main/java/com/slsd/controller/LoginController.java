@@ -47,6 +47,13 @@ public class LoginController {
 		return "login";
 	}
 
+	/**
+	* @Title: forgetin
+	* @Description: 跳转到忘记密码页面
+	* @param: @return
+	* @return: String
+	* @throws
+	*/
 	@RequestMapping(value = "/forgetin", method = RequestMethod.GET)
 	public String forgetin() {
 		return "forget";

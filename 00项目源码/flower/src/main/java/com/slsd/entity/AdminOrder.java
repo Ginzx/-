@@ -9,12 +9,12 @@ package com.slsd.entity;
  */
 public class AdminOrder {
 
-	private int orderid;
-	private int number;
-	private double price;
-	private String username;
-	private String pictre;
-	private String flower;
+	private int orderid;//订单号
+	private int number;//数量
+	private double price;//价格
+	private String username;//用户姓名
+	private String pictre;//图片
+	private String flower;//商品
 
 	public int getOrderid() {
 		return orderid;
