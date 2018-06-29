@@ -1,0 +1,181 @@
+.all {
+	width: 1600px;
+}
+
+.m-top {
+	height: 50px;
+	background-color: gainsboro;
+	margin-top: -12px;
+}
+
+.m-top ul {
+	margin-left: 110px;
+	font-size: 12px;
+	color: dimgrey;
+}
+
+.m-top ul li {
+	float: left;
+	list-style: none;
+	margin-top: 17px;
+	margin-left: 35px;
+}
+
+#m-top-1 {
+	margin-left: 1200px;
+	font-size: 17px;
+}
+
+.m-top ul li a:link {
+	color: black;
+	text-decoration: none;
+}
+
+.s-top {
+	width: 1600px;
+	height: 200px;
+	background: url(../img/stone.jpg);
+}
+
+.s-top ul {
+	font-size: 16px;
+	color: dimgrey;
+	margin-left: 380px;
+}
+
+.s-top ul li {
+	float: left;
+	list-style: none;
+	margin-top: 30px;
+	margin-left: 120px;
+}
+
+.s-top ul li a:link {
+	color: dimgrey;
+	text-decoration: none;
+}
+
+.center {
+	width: 1600px;
+	height: 1000px;
+	background: url(../img/stone1.png)
+}
+
+.center-top {
+	width: 1600px;
+	height: 50px;
+	border: 1px solid black;
+	border-style: dashed none dashed none;
+}
+
+.center-top-1 {
+	margin-left: 180px;
+	margin-top: 15px;
+}
+
+.center-top a:link {
+	margin-left: 20px;
+	font-size: 15px;
+	text-decoration: none;
+	color: dimgrey;
+}
+
+.center-mid {
+	width: 1200px;
+	height: 900px;
+	margin-left: 200px;
+	margin-top: 20px;
+	background-color: white;
+}
+
+.center-mid-right {
+	width: 500px;
+	height: 600px;
+}
+
+.center-mid-left {
+	width: 360px;
+	height: 600px;
+	margin-left: 500px;
+	margin-top: -600px;
+}
+
+#center-mid-left-1 {
+	margin-left: 40px;
+	margin-top: 40px;
+}
+
+#center-mid-left-2 {
+	color: red;
+}
+#center-mid-left-3{
+	font-size: 40px;
+}
+#center-mid-left-4{
+	border: 1px solid black;
+	border-style: dashed none dashed none;
+	
+}
+.center-mid-left2{
+	width: 340px;
+	height: 900px;
+	margin-left: 860px;
+	margin-top: -650px;
+}
+.center-mid-left2-1{
+	width: 340px;
+	height: 300px;
+}
+#center-mid-left2-a{
+	height: 300px;
+}
+#center-mid-left2-b{
+	background-color: black;
+	color: white;
+	height: 60px;
+}
+.center-mid-left2-2{
+	width: 340px;
+	height: 600px;
+}
+.gw_num {
+	border: 1px solid #dbdbdb;
+	width: 110px;
+	line-height: 26px;
+	overflow: hidden;
+	margin-left: 180px;
+	margin-top: -32px;
+}
+
+.gw_num em {
+	display: block;
+	height: 26px;
+	width: 26px;
+	float: left;
+	color: #7A7979;
+	border-right: 1px solid #dbdbdb;
+	text-align: center;
+	cursor: pointer;
+}
+
+.gw_num .num {
+	display: block;
+	float: left;
+	text-align: center;
+	width: 52px;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 24px;
+	border: 0;
+}
+
+.gw_num em.add {
+	float: right;
+	border-right: 0;
+	border-left: 1px solid #dbdbdb;
+}
+.center-mid-down{
+	width: 860px;
+	height: 300px;
+	margin-top: -300px;
+}
