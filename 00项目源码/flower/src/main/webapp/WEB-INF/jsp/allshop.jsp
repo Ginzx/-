@@ -97,8 +97,7 @@
 					<div style="visibility: hidden;"
 						class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
 						<h3 class="tbar-panel-header J-panel-header">
-							<a href="" class="title"><i></i><em class="title">购物车</em></a> <span
-								class="close-panel J-close"></span>
+							<a href="" class="title"><i></i><em class="title">购物车</em></a> 
 						</h3>
 						<div class="tbar-panel-main">
 							<div class="tbar-panel-content J-panel-content">
