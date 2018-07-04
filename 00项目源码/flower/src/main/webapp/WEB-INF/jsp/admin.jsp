@@ -116,7 +116,7 @@
 								<c:forEach var="orders" items="${orders }">
 									<tr>
 										<td>${orders.orderid}</td>
-										<td><img src="${orders.pictre}" width="100px"
+										<td><img src="${orders.picture}" width="100px"
 											height="100px"></td>
 										<td>${orders.flower}共${orders.number}个</td>
 
