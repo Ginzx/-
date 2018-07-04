@@ -256,6 +256,9 @@ select {
 	background-color: #fff;
 	margin-right: 10px;
 }
+a{
+	color: black;
+}
 .zhi {
 	margin-top: 33px;
 	border-radius: 0!important;

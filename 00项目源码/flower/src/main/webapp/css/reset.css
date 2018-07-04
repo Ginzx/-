@@ -130,3 +130,6 @@
         clear: both;
         visibility: hidden;
     }
+    a{
+	color: black;
+}

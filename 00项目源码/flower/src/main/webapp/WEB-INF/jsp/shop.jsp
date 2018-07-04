@@ -224,15 +224,15 @@
 					</div>
 				</div>
 				<div class="center-mid-down">
-					<table width="750px" height="280px" border="0"
+					<table width="750px" height="280px" 
 						style="margin-left: 40px; margin-top: 15px;">
 						<tr>
 							<td><h4>用户评论</h4></td>
 						</tr>
 						<c:forEach var="ct" items="${clist }">
-							<tr>
+							<tr style="border-bottom:solid 1px #333333;">
 								<td>${ct.comment }</td>
-								<td>${ct.user }</td>
+								<td >${ct.user }</td>
 							</tr>
 						</c:forEach>
 

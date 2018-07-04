@@ -134,3 +134,6 @@ img{
 	-webkit-transition: all 0.3s ease-in 0.1s;
 	-o-transition: all 0.3s ease-in 0.1s;
 }
+a{
+	color: black;
+}

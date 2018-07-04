@@ -20,7 +20,9 @@ label{
 label.mark{
     background: url("../images/mark1.png") no-repeat -1px -1px;
 }
-
+a{
+	color: black;
+}
 a:hover{
     color: #ff873e;
     text-decoration: underline;

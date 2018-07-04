@@ -57,6 +57,9 @@ body {
 	min-height: 500px;
 }
 /*左侧菜单栏*/
+a{
+	color: black;
+}
 
 #logoDiv {
 	padding-top: 20px;
